@@ -1,5 +1,14 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/search/route": "app/api/search/route.js",
+  "/about/page": "app/about/page.js",
+  "/download/page": "app/download/page.js",
+  "/features/family-manager/page": "app/features/family-manager/page.js",
+  "/features/page": "app/features/page.js",
   "/page": "app/page.js",
-  "/docs/[[...slug]]/page": "app/docs/[[...slug]]/page.js"
+  "/pricing/page": "app/pricing/page.js",
+  "/support/page": "app/support/page.js",
+  "/docs/page": "app/docs/page.js",
+  "/docs/[slug]/page": "app/docs/[slug]/page.js",
+  "/docs/getting-started/page": "app/docs/getting-started/page.js"
 }

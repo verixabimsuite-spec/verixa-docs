@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/search/route": "/api/search",
+  "/about/page": "/about",
+  "/download/page": "/download",
+  "/features/family-manager/page": "/features/family-manager",
+  "/features/page": "/features",
+  "/page": "/",
+  "/pricing/page": "/pricing",
+  "/support/page": "/support",
+  "/docs/page": "/docs",
+  "/docs/[slug]/page": "/docs/[slug]",
+  "/docs/getting-started/page": "/docs/getting-started"
+}
