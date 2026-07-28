@@ -1,4 +1,3 @@
-import { RootProvider } from 'fumadocs-ui/provider';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
@@ -8,12 +7,17 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+export const metadata = {
+  title: 'VERIXA Suite',
+  description: 'Next-Generation Revit BIM Ecosystem',
+};
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen bg-background text-text">
+      <body className="flex flex-col min-h-screen" style={{ backgroundColor: '#0B1120', color: '#FFFFFF' }}>
         <LanguageProvider>
-          <RootProvider>{children}</RootProvider>
+          {children}
         </LanguageProvider>
       </body>
     </html>

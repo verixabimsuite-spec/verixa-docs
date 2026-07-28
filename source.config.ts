@@ -1,5 +1,2 @@
-import { defineDocs, defineConfig } from 'fumadocs-mdx/config';
-
-export const { docs, meta } = defineDocs();
-
-export default defineConfig();
+// source.config.ts - not used, @next/mdx is used instead
+export {};

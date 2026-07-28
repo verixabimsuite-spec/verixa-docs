@@ -1,8 +1,3 @@
-import { docs, meta } from '@/.source';
-import { createMDXSource } from 'fumadocs-mdx';
-import { loader } from 'fumadocs-core/source';
-
-export const source = loader({
-  baseUrl: '/docs',
-  source: createMDXSource(docs, meta),
-});
+// This file is no longer needed - using @next/mdx instead of fumadocs-mdx
+// Docs pages directly import their MDX files
+export {};
