@@ -1,4 +1,3 @@
-import { createPreset } from 'fumadocs-ui/tailwind-plugin';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -7,9 +6,7 @@ const config: Config = {
     './app/**/*.{ts,tsx}',
     './content/**/*.{md,mdx}',
     './mdx-components.{ts,tsx}',
-    './node_modules/fumadocs-ui/dist/**/*.js',
   ],
-  presets: [createPreset()],
   theme: {
     extend: {
       colors: {
@@ -23,10 +20,11 @@ const config: Config = {
         muted: {
           DEFAULT: '#1F2937',
           foreground: '#D1D5DB',
-        }
+        },
       },
     },
   },
+  plugins: [],
 };
 
 export default config;

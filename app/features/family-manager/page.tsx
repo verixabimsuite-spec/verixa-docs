@@ -1,29 +1,51 @@
-import { DocsPage, DocsBody, DocsTitle, DocsDescription } from 'fumadocs-ui/page';
+import Link from 'next/link';
 
 export default function FamilyManagerPage() {
   return (
-    <DocsPage>
-      <DocsTitle>Family Manager</DocsTitle>
-      <DocsDescription>Organize, search, and load Revit families instantly.</DocsDescription>
-      <DocsBody>
-        <h2>Overview</h2>
-        <p>The Family Manager is a lightning-fast tool to manage your Revit families in the cloud or local network.</p>
-        
-        <h2>Key Features</h2>
-        <ul>
-          <li>Instant Search</li>
-          <li>Cloud Sync</li>
-          <li>Batch Loading</li>
-        </ul>
-        
-        <h2>Workflow</h2>
-        <p>1. Open Family Manager. 2. Search for the family you need. 3. Drag and drop into your project.</p>
-        
-        {/* Screenshots Placeholder */}
-        <div className="w-full h-64 bg-card rounded-xl border border-gray-800 flex items-center justify-center my-8 text-secondaryText">
-          [ Screenshot Placeholder ]
+    <div className="max-w-4xl mx-auto py-12 px-6 text-white">
+      <div className="mb-8">
+        <Link href="/docs/getting-started" className="text-primary hover:underline text-sm font-medium">
+          &larr; Back to Documentation
+        </Link>
+      </div>
+
+      <h1 className="text-4xl font-extrabold mb-4">Family Manager</h1>
+      <p className="text-xl text-gray-400 mb-10">
+        Organize, search, and load Revit families instantly across your local network or cloud storage.
+      </p>
+
+      <div className="space-y-10 text-gray-300 leading-relaxed">
+        <section className="bg-gray-900/60 p-8 rounded-2xl border border-gray-800">
+          <h2 className="text-2xl font-bold text-white mb-4">Overview</h2>
+          <p>
+            The Family Manager is a lightning-fast Revit plugin that replaces traditional, slow file dialogs.
+            It provides visual previews, instant search filtering, and drag-and-drop capability for your BIM family library.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-white mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-300">
+            <li><strong>Instant Search & Filter:</strong> Search thousands of RFA files by category, parameter, or keyword in milliseconds.</li>
+            <li><strong>Cloud & Local Sync:</strong> Connect seamlessly to shared network drives, OneDrive, or cloud repositories.</li>
+            <li><strong>Batch Loading:</strong> Load multiple family types into your active Revit project simultaneously.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-white mb-4">Workflow</h2>
+          <ol className="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Open the <strong>Verixa Suite</strong> tab in Autodesk Revit.</li>
+            <li>Click <strong>Family Manager</strong> to launch the floating panel.</li>
+            <li>Search or filter families visually using thumbnails.</li>
+            <li>Drag and drop the desired family directly into your model view.</li>
+          </ol>
+        </section>
+
+        <div className="w-full h-64 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-center my-8 text-gray-500 font-medium">
+          [ Screenshot Placeholder — Family Manager Interface ]
         </div>
-      </DocsBody>
-    </DocsPage>
+      </div>
+    </div>
   );
 }
