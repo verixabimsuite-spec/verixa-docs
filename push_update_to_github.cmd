@@ -13,7 +13,7 @@ git add .
 
 echo.
 echo [2/3] Menyimpan perubahan...
-git commit -m "feat: complete rewrite to Next.js + Fumadocs enterprise architecture"
+git commit -m "fix: simplify app router to pure TSX to guarantee clean build"
 git branch -M main
 
 echo.
