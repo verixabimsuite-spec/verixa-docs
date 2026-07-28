@@ -1,4 +1,5 @@
-// Search API placeholder - can be enhanced later
+export const dynamic = 'force-static';
+
 export async function GET() {
   return Response.json({ results: [] });
 }

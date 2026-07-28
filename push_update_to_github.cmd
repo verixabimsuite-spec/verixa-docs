@@ -13,7 +13,7 @@ git add .
 
 echo.
 echo [2/3] Menyimpan perubahan...
-git commit -m "fix: simplify app router to pure TSX to guarantee clean build"
+git commit -m "fix: add force-static to search API route for Next.js export"
 git branch -M main
 
 echo.
