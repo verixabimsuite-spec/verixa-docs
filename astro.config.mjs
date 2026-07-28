@@ -10,9 +10,9 @@ export default defineConfig({
       customCss: [
         './src/styles/custom.css',
       ],
-      social: [
-        { label: 'GitHub', href: 'https://github.com/verixabimsuite-spec/verixa-docs' }
-      ],
+      social: {
+        github: 'https://github.com/verixabimsuite-spec/verixa-docs',
+      },
       sidebar: [
         {
           label: 'Halaman Umum',
