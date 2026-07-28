@@ -1,0 +1,59 @@
+name: Deploy Astro site to GitHub Pages (Fix ERESOLVE)
+
+on:
+  # Memicu eksekusi workflow setiap ada push kode ke branch 'main'
+  push:
+    branches: ["main"]
+
+  # Memungkinkan Anda mengeksekusi ulang workflow ini secara manual dari tab "Actions" di GitHub
+  workflow_dispatch:
+
+# Mengatur hak akses token GITHUB_TOKEN untuk publikasi ke GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Mengabaikan pengelompokan eksekusi berganda agar build tidak mengalami bentrokan proses antrean
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  BUILD_PATH: "." # Jalur utama directory build di dalam repository
+  # Secara otomatis mengaktifkan flag --legacy-peer-deps untuk semua perintah NPM di GitHub Actions
+  # guna menuntaskan masalah eror kompilasi 'ERESOLVE could not resolve peer dependency'
+  NPM_CONFIG_LEGACY_PEER_DEPS: "true"
+
+jobs:
+  build:
+    name: Build Astro Starlight Docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies, build, and setup for GitHub Pages
+        uses: withastro/action@v3
+        with:
+          # Memerintahkan secara tegas agar eksekusi instalasi mengikutsertakan --legacy-peer-deps
+          package-manager-install: "npm install --legacy-peer-deps"
+        env:
+          NPM_CONFIG_LEGACY_PEER_DEPS: "true"
+
+      - name: Upload production build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy to GitHub Pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
