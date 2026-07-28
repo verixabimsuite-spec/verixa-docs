@@ -21,10 +21,10 @@ export default function DownloadPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <h2 className="text-3xl font-bold">Version 2.4.1</h2>
+                <h2 className="text-3xl font-bold">Version 1.0.0</h2>
                 <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase">Latest</span>
               </div>
-              <p className="text-secondaryText mb-6">Released on November 15, 2025</p>
+              <p className="text-secondaryText mb-6">Released on July 29, 2026 — Initial Release</p>
               <div className="flex items-center gap-4 text-sm text-gray-400">
                 <span className="flex items-center gap-1"><Shield size={16} /> Verified Safe</span>
                 <span className="flex items-center gap-1"><FileText size={16} /> 45 MB</span>
@@ -51,20 +51,7 @@ export default function DownloadPage() {
 
           <div className="bg-card/50 p-8 rounded-xl border border-gray-800">
             <h3 className="text-xl font-bold mb-4">Previous Versions</h3>
-            <ul className="space-y-3">
-              <li className="flex justify-between items-center text-sm">
-                <span className="text-gray-300">Version 2.3.5</span>
-                <button className="text-primary hover:underline">Download</button>
-              </li>
-              <li className="flex justify-between items-center text-sm">
-                <span className="text-gray-300">Version 2.3.0</span>
-                <button className="text-primary hover:underline">Download</button>
-              </li>
-              <li className="flex justify-between items-center text-sm">
-                <span className="text-gray-300">Version 2.0.0</span>
-                <button className="text-primary hover:underline">Download</button>
-              </li>
-            </ul>
+            <p className="text-secondaryText text-sm">This is the first official release of Verixa Suite. No previous versions are available.</p>
           </div>
         </div>
       </div>
