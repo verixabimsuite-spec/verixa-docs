@@ -5,8 +5,8 @@ echo ======================================================================
 echo    MEMBUKA WEBSITE DOKUMENTASI VERIXA SECARA LOKAL
 echo ======================================================================
 echo.
-echo Menjalankan Astro Development Server...
-echo Buka browser Anda di: http://localhost:4321/verixa-docs/
+echo Menjalankan Next.js Development Server...
+echo Buka browser Anda di: http://localhost:3000/
 echo.
 npm run dev
 pause

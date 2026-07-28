@@ -13,7 +13,7 @@ git add .
 
 echo.
 echo [2/3] Menyimpan perubahan...
-git commit -m "fix: update social link format for Starlight 0.41.x"
+git commit -m "feat: complete rewrite to Next.js + Fumadocs enterprise architecture"
 git branch -M main
 
 echo.
