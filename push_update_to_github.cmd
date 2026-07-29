@@ -33,7 +33,7 @@ git add .
 
 echo.
 echo [3/4] Menyimpan perubahan...
-git commit -m "fix: replace optional catch-all route with explicit slug route"
+git commit -m "feat: update pricing blur overlay & download page to v1.0.0"
 git branch -M main
 
 echo.

@@ -1,13 +1,9 @@
-import Link from 'next/link';
+import { BackButton } from '@/components/BackButton';
 
 export default function FamilyManagerPage() {
   return (
     <div className="max-w-4xl mx-auto py-12 px-6 text-white">
-      <div className="mb-8">
-        <Link href="/docs/getting-started" className="text-primary hover:underline text-sm font-medium">
-          &larr; Back to Documentation
-        </Link>
-      </div>
+      <BackButton label="Back to Documentation" href="/docs/getting-started" />
 
       <h1 className="text-4xl font-extrabold mb-4">Family Manager</h1>
       <p className="text-xl text-gray-400 mb-10">

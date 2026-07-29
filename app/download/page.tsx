@@ -1,13 +1,12 @@
 "use client";
 
-import { Download, FileText, Shield, FileCode, Clock } from 'lucide-react';
+import { Download, FileText, FileCode } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BackButton } from '@/components/BackButton';
 
 const previousVersions = [
-  { version: '1.4.0', date: 'July 25, 2026', size: '48 MB', notes: 'Helix 3D Preview & Real-Time Clash Matrix' },
-  { version: '1.0.0', date: 'July 29, 2026', size: '45 MB', notes: 'Initial Official Release' },
+  { version: '1.0.0', date: 'July 30, 2026', size: 'Installer (.exe)', notes: 'Initial Official Release v1.0.0' },
 ];
 
 export default function DownloadPage() {
@@ -21,7 +20,7 @@ export default function DownloadPage() {
             <Download size={16} /> Downloads & Resources
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Download Verixa BIM Suite</h1>
-          <p className="text-xl text-gray-400">Get the latest installer for Autodesk Revit 2021-2026.</p>
+          <p className="text-xl text-gray-400">Get the latest installer for Autodesk Revit 2021-2027.</p>
         </div>
 
         {/* Latest Release Card */}
@@ -33,18 +32,14 @@ export default function DownloadPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <h2 className="text-3xl font-bold text-white">Version 1.4.0</h2>
+                <h2 className="text-3xl font-bold text-white">Version 1.0.0</h2>
                 <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Latest Official</span>
               </div>
-              <p className="text-gray-400 mb-6">Released on July 25, 2026 — Multi-Target Setup Installer</p>
-              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
-                <span className="flex items-center gap-1.5"><Shield size={16} className="text-blue-400" /> Digital Signed & Virus Inspected</span>
-                <span className="flex items-center gap-1.5"><FileText size={16} className="text-blue-400" /> 48 MB (EXE)</span>
-              </div>
+              <p className="text-gray-400 mb-2">Released on July 30, 2026 — Multi-Target Setup Installer</p>
             </div>
             
             <a 
-              href="/verixa-suite-docs/deploy_to_github.cmd"
+              href="#"
               download
               className="w-full md:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold flex items-center justify-center gap-3 transition-colors shadow-lg shadow-blue-500/20"
             >
@@ -86,16 +81,16 @@ export default function DownloadPage() {
           </div>
         </div>
 
-        {/* Previous Versions */}
+        {/* Previous Versions & Changelog */}
         <div className="bg-gray-900 p-8 rounded-2xl border border-gray-800 space-y-6">
-          <h3 className="text-2xl font-bold">Previous Versions & Changelog</h3>
+          <h3 className="text-2xl font-bold">Versions & Changelog</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-gray-300">
               <thead className="text-xs uppercase bg-gray-800/60 text-gray-400 border-b border-gray-800">
                 <tr>
                   <th className="p-4">Version</th>
                   <th className="p-4">Release Date</th>
-                  <th className="p-4">File Size</th>
+                  <th className="p-4">Type</th>
                   <th className="p-4">Notes</th>
                   <th className="p-4">Action</th>
                 </tr>
@@ -108,7 +103,7 @@ export default function DownloadPage() {
                     <td className="p-4">{ver.size}</td>
                     <td className="p-4 text-gray-400">{ver.notes}</td>
                     <td className="p-4">
-                      <Link href="/release-notes" className="text-blue-400 hover:underline">View Notes</Link>
+                      <Link href="/docs/getting-started" className="text-blue-400 hover:underline">View Notes</Link>
                     </td>
                   </tr>
                 ))}
