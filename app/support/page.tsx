@@ -3,11 +3,14 @@
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Bug, FileQuestion, Clock, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import { BackButton } from '@/components/BackButton';
 
 export default function SupportPage() {
   return (
     <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-20 px-6">
       <div className="max-w-5xl mx-auto w-full space-y-16">
+        <BackButton label="Back to Home" />
+
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Support Hub</h1>
           <p className="text-xl text-gray-400">Get technical support, report issues, or request new features for Verixa BIM Suite.</p>

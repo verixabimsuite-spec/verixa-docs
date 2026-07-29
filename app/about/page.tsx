@@ -1,13 +1,15 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { Building2, Target, ShieldCheck, Cpu, Compass, Eye } from 'lucide-react';
 import Link from 'next/link';
-import { Target, Eye, Cpu, Compass } from 'lucide-react';
+import { BackButton } from '@/components/BackButton';
 
 export default function AboutPage() {
   return (
-    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-20 px-6">
-      <div className="max-w-4xl mx-auto w-full space-y-16">
+    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-12 px-6">
+      <div className="max-w-5xl mx-auto w-full space-y-12">
+        <BackButton label="Back to Home" />
+
         <section className="text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">About Verixa BIM Suite</h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">

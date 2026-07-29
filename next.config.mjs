@@ -7,7 +7,7 @@ if (isGithubActions) {
 
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
+  ...(isGithubActions ? { output: 'export' } : {}),
   basePath: isGithubActions ? `/${repo}` : '',
   assetPrefix: isGithubActions ? `/${repo}/` : undefined,
   images: {

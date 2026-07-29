@@ -1,9 +1,11 @@
 import { Shield } from 'lucide-react';
+import { BackButton } from '@/components/BackButton';
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-20 px-6">
-      <div className="max-w-4xl mx-auto w-full space-y-10">
+    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-12 px-6">
+      <div className="max-w-4xl mx-auto w-full space-y-8">
+        <BackButton label="Back to Home" />
         <div>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-4">
             <Shield size={16} /> Legal & Compliance

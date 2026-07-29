@@ -3,6 +3,7 @@
 import { Download, FileText, Shield, FileCode, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { BackButton } from '@/components/BackButton';
 
 const previousVersions = [
   { version: '1.4.0', date: 'July 25, 2026', size: '48 MB', notes: 'Helix 3D Preview & Real-Time Clash Matrix' },
@@ -11,8 +12,10 @@ const previousVersions = [
 
 export default function DownloadPage() {
   return (
-    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-20 px-6">
-      <div className="max-w-5xl mx-auto w-full space-y-16">
+    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-12 px-6">
+      <div className="max-w-5xl mx-auto w-full space-y-12">
+        <BackButton label="Back to Home" />
+
         <div className="text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-4">
             <Download size={16} /> Downloads & Resources

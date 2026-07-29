@@ -6,7 +6,9 @@ echo    BUILD LOKAL & PUSH VERIXA DOCS KE GITHUB
 echo ======================================================================
 echo.
 
-:: Clean up old conflicting optional catch-all route if present
+:: Clean up old conflicting cache or routes if present
+if exist ".next" rmdir /s /q ".next"
+if exist "out" rmdir /s /q "out"
 if exist "app\docs\[[...slug]]" rmdir /s /q "app\docs\[[...slug]]"
 
 echo [1/4] Memastikan file logo asli Verixa terpasang...

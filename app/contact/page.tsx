@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, Github, MessageSquare, Globe, CheckCircle2 } from 'lucide-react';
+import { BackButton } from '@/components/BackButton';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,6 +17,10 @@ export default function ContactPage() {
   return (
     <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-20 px-6">
       <div className="max-w-5xl mx-auto w-full">
+        <div className="mb-8">
+          <BackButton label="Back to Home" />
+        </div>
+        
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-4">
             <Mail size={16} /> Get In Touch

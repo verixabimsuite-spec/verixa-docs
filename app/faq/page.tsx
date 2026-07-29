@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
+import { BackButton } from '@/components/BackButton';
 
 const faqCategories = [
   {
@@ -54,9 +55,11 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-20 px-6">
+    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-12 px-6">
       <div className="max-w-4xl mx-auto w-full">
-        <div className="text-center mb-16">
+        <BackButton label="Back to Home" />
+
+        <div className="text-center mb-16 mt-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-4">
             <HelpCircle size={16} /> Knowledge & Help
           </div>
