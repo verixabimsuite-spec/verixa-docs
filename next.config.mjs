@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+let repo = '';
+if (isGithubActions) {
+  repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '') || 'verixa-docs';
+}
+
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/verixa-docs',
+  basePath: isGithubActions ? `/${repo}` : '',
+  assetPrefix: isGithubActions ? `/${repo}/` : undefined,
   images: {
     unoptimized: true,
   },

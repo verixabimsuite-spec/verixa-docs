@@ -9,6 +9,9 @@ echo.
 :: Clean up old conflicting optional catch-all route if present
 if exist "app\docs\[[...slug]]" rmdir /s /q "app\docs\[[...slug]]"
 
+echo [1/4] Memastikan file logo asli Verixa terpasang...
+node copy_logo.js
+echo.
 echo [1/4] Menguji Build Lokal Next.js...
 call npx next build
 if %errorlevel% neq 0 (

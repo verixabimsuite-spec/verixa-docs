@@ -13,10 +13,13 @@ export default function HomePage() {
     <main className="flex-1 w-full flex flex-col bg-background text-text">
       {/* Navbar */}
       <header className="w-full py-4 px-8 flex justify-between items-center border-b border-gray-800 z-50 sticky top-0 bg-background/80 backdrop-blur-md">
-        <div className="font-bold text-2xl tracking-tight text-white flex items-center gap-2">
-          <span className="text-primary text-3xl">V</span>
-          VERIXA
-        </div>
+        <Link href="/" className="flex items-center gap-2">
+          <img
+            src="/verixa-logo.jpg"
+            alt="Verixa Logo"
+            className="h-10 w-auto object-contain rounded-md"
+          />
+        </Link>
         <nav className="hidden md:flex gap-6 font-medium text-gray-400 text-sm">
           <Link href="/docs/getting-started" className="hover:text-white transition-colors">{t('nav.docs')}</Link>
           <Link href="/features/family-manager" className="hover:text-white transition-colors">{t('nav.features')}</Link>
@@ -75,10 +78,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full border-t border-gray-800 py-12 px-8 text-center text-gray-500">
-        <p>{t('home.footer')}</p>
-      </footer>
     </main>
   );
 }

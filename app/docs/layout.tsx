@@ -3,31 +3,29 @@ import Link from 'next/link';
 
 const docsSidebar = [
   {
-    section: 'Getting Started',
+    section: 'Documentation & Setup',
     items: [
-      { label: 'Introduction', href: '/docs/getting-started' },
-      { label: 'Installation', href: '/docs/installation' },
+      { label: 'Getting Started', href: '/docs/getting-started' },
+      { label: 'Installation Guide', href: '/docs/installation' },
       { label: 'System Requirements', href: '/docs/system-requirements' },
-      { label: 'Activation', href: '/docs/activation' },
-      { label: 'Quick Start', href: '/docs/quick-start' },
+      { label: 'Activation Guide', href: '/docs/activation' },
+      { label: 'License Management', href: '/docs/license-management' },
     ],
   },
   {
-    section: 'Features',
+    section: 'User Manual & Features',
     items: [
       { label: 'Family Manager', href: '/docs/family-manager' },
-      { label: 'Auto Annotation', href: '/docs/auto-annotation' },
+      { label: 'Auto Annotation / Tag', href: '/docs/auto-annotation' },
       { label: 'Batch Sheet Maker', href: '/docs/batch-sheet-maker' },
     ],
   },
   {
-    section: 'Reference',
+    section: 'Support & Reference',
     items: [
-      { label: 'Keyboard Shortcuts', href: '/docs/keyboard-shortcuts' },
-      { label: 'Settings', href: '/docs/settings' },
       { label: 'Troubleshooting', href: '/docs/troubleshooting' },
-      { label: 'FAQ', href: '/docs/faq' },
-      { label: 'Release Notes', href: '/docs/release-notes' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Release Notes', href: '/release-notes' },
     ],
   },
 ];
@@ -37,8 +35,12 @@ export default function DocsLayout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen bg-background text-white">
       {/* Sidebar */}
       <aside className="hidden md:flex w-64 flex-shrink-0 flex-col border-r border-gray-800 py-10 px-6 sticky top-0 h-screen overflow-y-auto">
-        <Link href="/" className="flex items-center gap-2 mb-10 font-bold text-xl">
-          <span className="text-primary text-2xl">V</span> VERIXA
+        <Link href="/" className="flex items-center gap-2 mb-10">
+          <img
+            src="/verixa-logo.jpg"
+            alt="Verixa Logo"
+            className="h-10 w-auto object-contain rounded-md"
+          />
         </Link>
         <nav className="flex flex-col gap-6">
           {docsSidebar.map((section) => (

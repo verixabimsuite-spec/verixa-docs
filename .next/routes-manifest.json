@@ -2,16 +2,8 @@
   "version": 3,
   "pages404": true,
   "caseSensitive": false,
-  "basePath": "/verixa-docs",
+  "basePath": "",
   "redirects": [
-    {
-      "source": "/verixa-docs/",
-      "destination": "/verixa-docs",
-      "basePath": false,
-      "internal": true,
-      "statusCode": 308,
-      "regex": "^/verixa-docs/$"
-    },
     {
       "source": "/:path+/",
       "destination": "/:path+",
@@ -51,6 +43,12 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
       "page": "/docs",
       "regex": "^/docs(?:/)?$",
       "routeKeys": {},
@@ -69,6 +67,18 @@
       "namedRegex": "^/download(?:/)?$"
     },
     {
+      "page": "/eula",
+      "regex": "^/eula(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/eula(?:/)?$"
+    },
+    {
+      "page": "/faq",
+      "regex": "^/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/faq(?:/)?$"
+    },
+    {
       "page": "/features",
       "regex": "^/features(?:/)?$",
       "routeKeys": {},
@@ -81,16 +91,40 @@
       "namedRegex": "^/features/family\\-manager(?:/)?$"
     },
     {
+      "page": "/future-releases",
+      "regex": "^/future\\-releases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/future\\-releases(?:/)?$"
+    },
+    {
       "page": "/pricing",
       "regex": "^/pricing(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/pricing(?:/)?$"
     },
     {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/release-notes",
+      "regex": "^/release\\-notes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/release\\-notes(?:/)?$"
+    },
+    {
       "page": "/support",
       "regex": "^/support(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/support(?:/)?$"
+    },
+    {
+      "page": "/terms-of-service",
+      "regex": "^/terms\\-of\\-service(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms\\-of\\-service(?:/)?$"
     }
   ],
   "dataRoutes": [],

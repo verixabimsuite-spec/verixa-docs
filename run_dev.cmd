@@ -5,6 +5,9 @@ echo ======================================================================
 echo    MEMBUKA WEBSITE DOKUMENTASI VERIXA SECARA LOKAL
 echo ======================================================================
 echo.
+echo Memastikan logo asli Verixa terpasang di public/verixa-logo.jpg...
+node copy_logo.js
+echo.
 echo Menjalankan Next.js Development Server...
 echo Buka browser Anda di: http://localhost:3000/
 echo.
