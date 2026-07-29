@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import verixaLogo from '@/public/verixa-logo.jpg';
 
 const docsSidebar = [
   {
@@ -36,10 +38,11 @@ export default function DocsLayout({ children }: { children: ReactNode }) {
       {/* Sidebar */}
       <aside className="hidden md:flex w-64 flex-shrink-0 flex-col border-r border-gray-800 py-10 px-6 sticky top-0 h-screen overflow-y-auto">
         <Link href="/" className="flex items-center gap-2 mb-10">
-          <img
-            src="/verixa-logo.jpg"
+          <Image
+            src={verixaLogo}
             alt="Verixa Logo"
             className="h-10 w-auto object-contain rounded-md"
+            priority
           />
         </Link>
         <nav className="flex flex-col gap-6">

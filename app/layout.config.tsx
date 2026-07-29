@@ -1,8 +1,11 @@
+import Image from 'next/image';
+import verixaLogo from '@/public/verixa-logo.jpg';
+
 export const baseOptions = {
   nav: {
     title: (
-      <img
-        src="/verixa-logo.jpg"
+      <Image
+        src={verixaLogo}
         alt="Verixa Logo"
         className="h-9 w-auto object-contain rounded-md"
       />

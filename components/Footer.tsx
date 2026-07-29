@@ -1,6 +1,8 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
+import verixaLogo from '@/public/verixa-logo.jpg';
 
 export function Footer() {
   return (
@@ -9,8 +11,8 @@ export function Footer() {
         {/* Brand Column */}
         <div className="md:col-span-2 space-y-4">
           <Link href="/" className="inline-block">
-            <img
-              src="/verixa-logo.jpg"
+            <Image
+              src={verixaLogo}
               alt="Verixa Logo"
               className="h-10 w-auto object-contain rounded-md"
             />

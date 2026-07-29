@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { LanguageToggle } from '@/components/LanguageToggle';
 
+import Image from 'next/image';
+import verixaLogo from '@/public/verixa-logo.jpg';
+
 export default function HomePage() {
   const { t } = useLanguage();
 
@@ -14,10 +17,11 @@ export default function HomePage() {
       {/* Navbar */}
       <header className="w-full py-4 px-8 flex justify-between items-center border-b border-gray-800 z-50 sticky top-0 bg-background/80 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-2">
-          <img
-            src="/verixa-logo.jpg"
+          <Image
+            src={verixaLogo}
             alt="Verixa Logo"
             className="h-10 w-auto object-contain rounded-md"
+            priority
           />
         </Link>
         <nav className="hidden md:flex gap-6 font-medium text-gray-400 text-sm">
