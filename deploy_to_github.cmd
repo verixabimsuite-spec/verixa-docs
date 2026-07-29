@@ -22,11 +22,15 @@ echo [3/4] Melakukan komit pertama (Initial Commit)...
 git commit -m "feat: initial release of Verixa Suite professional documentation (Astro Starlight)"
 
 echo.
-echo [4/4] Membuka komunikasi dengan GitHub CLI (gh) dan melakukan Push...
-gh repo create verixa-suite-docs --public --source=. --push
+echo.
+echo [4/4] Mengirim perubahan ke GitHub...
+git push -u origin main
 if errorlevel 1 (
-    echo [ERROR] Gagal membuat repository via GitHub CLI. Pastikan Anda sudah terotorisasi via command: gh auth login
-    goto end
+    echo.
+    echo Menghubungkan ke remote origin...
+    git remote remove origin 2>nul
+    git remote add origin https://github.com/verixabimsuite-spec/verixa-docs.git 2>nul
+    git push -u origin main
 )
 
 echo.
