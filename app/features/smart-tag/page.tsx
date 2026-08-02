@@ -1,5 +1,5 @@
 import { BackButton } from '@/components/BackButton';
-import Image from 'next/image';
+import { AppImage } from '@/components/AppImage';
 
 export default function SmartTagPage() {
   return (
@@ -23,22 +23,22 @@ export default function SmartTagPage() {
           <h2 className="text-2xl font-bold text-white mb-6">Features Showcase</h2>
           <div className="grid grid-cols-1 gap-8">
             <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-              <Image src="/images/smart-tag-1.png" alt="Smart Tag Settings" width={1200} height={800} className="w-full h-auto" />
+              <AppImage src="/images/smart-tag-1.png" alt="Smart Tag Settings" width={1200} height={800} className="w-full h-auto" />
               <div className="p-4 text-center text-sm text-gray-400">Smart Tag Control Panel</div>
             </div>
             <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-              <Image src="/images/smart-tag-2.png" alt="Auto Dimensioning" width={1200} height={800} className="w-full h-auto" />
+              <AppImage src="/images/smart-tag-2.png" alt="Auto Dimensioning" width={1200} height={800} className="w-full h-auto" />
               <div className="p-4 text-center text-sm text-gray-400">Automatic Dimensions and Spot Elevations</div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-                  <Image src="/images/smart-tag-3.png" alt="Tag Placement" width={600} height={400} className="w-full h-auto" />
+                  <AppImage src="/images/smart-tag-3.png" alt="Tag Placement" width={600} height={400} className="w-full h-auto" />
                 </div>
                 <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-                  <Image src="/images/smart-tag-4.png" alt="Clean Documentation" width={600} height={400} className="w-full h-auto" />
+                  <AppImage src="/images/smart-tag-4.png" alt="Clean Documentation" width={600} height={400} className="w-full h-auto" />
                 </div>
                 <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40 md:col-span-2">
-                  <Image src="/images/smart-tag-5.png" alt="Advanced Options" width={1200} height={800} className="w-full h-auto" />
+                  <AppImage src="/images/smart-tag-5.png" alt="Advanced Options" width={1200} height={800} className="w-full h-auto" />
                 </div>
             </div>
           </div>

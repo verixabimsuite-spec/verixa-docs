@@ -9,6 +9,9 @@ import { LanguageToggle } from '@/components/LanguageToggle';
 import Image from 'next/image';
 import verixaLogo from '@/public/verixa-logo.jpg';
 
+import { FaqAccordion } from '@/components/FaqAccordion';
+import { PricingMatrix } from '@/components/PricingMatrix';
+
 export default function HomePage() {
   const { t } = useLanguage();
 
@@ -81,6 +84,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Pricing Feature Comparison Matrix */}
+      <PricingMatrix />
+
+      {/* Interactive FAQ Accordion */}
+      <FaqAccordion />
 
     </main>
   );

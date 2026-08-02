@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Check, X, Lock } from 'lucide-react';
 import { BackButton } from '@/components/BackButton';
 
+import { PricingMatrix } from '@/components/PricingMatrix';
+
 export default function PricingPage() {
   return (
     <main className="flex-1 w-full flex flex-col bg-background text-text py-20 px-6 relative">
@@ -15,7 +17,7 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing Content Container with Overlay Blur */}
-        <div className="relative">
+        <div className="relative mb-20">
           {/* Blurred Cards Container */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 filter blur-md select-none pointer-events-none opacity-50">
             {/* Free Trial */}
@@ -73,6 +75,9 @@ export default function PricingPage() {
             </p>
           </div>
         </div>
+
+        {/* Detailed Feature Matrix */}
+        <PricingMatrix />
       </div>
     </main>
   );

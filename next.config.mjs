@@ -10,6 +10,9 @@ const nextConfig = {
   ...(isGithubActions ? { output: 'export' } : {}),
   basePath: isGithubActions ? `/${repo}` : '',
   assetPrefix: isGithubActions ? `/${repo}/` : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repo}` : '',
+  },
   images: {
     unoptimized: true,
   },
