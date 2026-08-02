@@ -1,9 +1,17 @@
 import { BackButton } from '@/components/BackButton';
-import { AppImage } from '@/components/AppImage';
+import { ImageSlideshow } from '@/components/ImageSlideshow';
+
+const SMART_TAG_SLIDES = [
+  { src: '/images/smart-tag-1.png', alt: 'Smart Tag Settings Panel', caption: 'Panel Kontrol Utama Smart Tag & Konfigurasi Kategori' },
+  { src: '/images/smart-tag-2.png', alt: 'Auto Dimensioning & Spot Elevation', caption: 'Penempatan Otomatis Dimensi Bangunan & Spot Elevation FFL' },
+  { src: '/images/smart-tag-3.png', alt: 'Automatic Tag Placement', caption: 'Penataan Presisi Tag Pintu, Jendela & Ruangan Tanpa Overlap' },
+  { src: '/images/smart-tag-4.png', alt: 'Clean Documentation', caption: 'Dokumentasi Gambar Kerja Rapi & Siap Cetak dalam Hitungan Detik' },
+  { src: '/images/smart-tag-5.png', alt: 'Advanced Options', caption: 'Pengaturan Warna Preview & Opsi Simpangan Tag' },
+];
 
 export default function SmartTagPage() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6 text-white">
+    <div className="max-w-5xl mx-auto py-12 px-6 text-white">
       <BackButton label="Back to Home" href="/" />
 
       <h1 className="text-4xl font-extrabold mb-4">Smart Tag & Auto Annotation</h1>
@@ -20,28 +28,8 @@ export default function SmartTagPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-6">Features Showcase</h2>
-          <div className="grid grid-cols-1 gap-8">
-            <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-              <AppImage src="/images/smart-tag-1.png" alt="Smart Tag Settings" width={1200} height={800} className="w-full h-auto" />
-              <div className="p-4 text-center text-sm text-gray-400">Smart Tag Control Panel</div>
-            </div>
-            <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-              <AppImage src="/images/smart-tag-2.png" alt="Auto Dimensioning" width={1200} height={800} className="w-full h-auto" />
-              <div className="p-4 text-center text-sm text-gray-400">Automatic Dimensions and Spot Elevations</div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-                  <AppImage src="/images/smart-tag-3.png" alt="Tag Placement" width={600} height={400} className="w-full h-auto" />
-                </div>
-                <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40">
-                  <AppImage src="/images/smart-tag-4.png" alt="Clean Documentation" width={600} height={400} className="w-full h-auto" />
-                </div>
-                <div className="rounded-2xl border border-gray-800 overflow-hidden bg-gray-900/40 md:col-span-2">
-                  <AppImage src="/images/smart-tag-5.png" alt="Advanced Options" width={1200} height={800} className="w-full h-auto" />
-                </div>
-            </div>
-          </div>
+          <h2 className="text-2xl font-bold text-white mb-6">Interactive Showcase</h2>
+          <ImageSlideshow images={SMART_TAG_SLIDES} />
         </section>
       </div>
     </div>

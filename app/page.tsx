@@ -11,6 +11,9 @@ import verixaLogo from '@/public/verixa-logo.jpg';
 
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { PricingMatrix } from '@/components/PricingMatrix';
+import { HeroFloatingBadges } from '@/components/HeroFloatingBadges';
+import { HeroProductTeaser } from '@/components/HeroProductTeaser';
+import { HeroStatsBar } from '@/components/HeroStatsBar';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -43,8 +46,12 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-12 pb-16 overflow-hidden">
+        {/* Glowing Neon Halos */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-500/20 rounded-full blur-[140px] pointer-events-none" />
+
+        {/* Animated Floating Badges */}
+        <HeroFloatingBadges />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,7 +59,7 @@ export default function HomePage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="z-10 max-w-4xl"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 whitespace-pre-line">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-200 to-gray-400 whitespace-pre-line">
             {t('home.hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto">
@@ -62,12 +69,18 @@ export default function HomePage() {
             <Link href="/download" className="px-8 py-4 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-lg flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]">
               {t('home.hero.cta.download')} <ArrowRight size={20} />
             </Link>
-            <Link href="/docs/getting-started" className="px-8 py-4 rounded-full bg-gray-800 hover:bg-gray-700 text-white font-semibold text-lg flex items-center justify-center transition-all">
+            <Link href="/docs/getting-started" className="px-8 py-4 rounded-full bg-gray-800/80 hover:bg-gray-700/80 text-white font-semibold text-lg flex items-center justify-center transition-all backdrop-blur-md border border-gray-700/50">
               {t('home.hero.cta.docs')}
             </Link>
           </div>
         </motion.div>
+
+        {/* Hero Glassmorphic Product Preview Teaser Window */}
+        <HeroProductTeaser />
       </section>
+
+      {/* Hero Performance Stats Bar */}
+      <HeroStatsBar />
 
       {/* Features */}
       <section className="w-full py-24 px-6 border-t border-gray-800/50">

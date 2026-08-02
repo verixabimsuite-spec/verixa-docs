@@ -1,9 +1,18 @@
 import { BackButton } from '@/components/BackButton';
-import { AppImage } from '@/components/AppImage';
+import { ImageSlideshow } from '@/components/ImageSlideshow';
+
+const FAMILY_MANAGER_SLIDES = [
+  { src: '/images/family-manager-1.png', alt: 'Family Manager Panel', caption: 'Tampilan Utama Floating Panel Family Manager di Revit' },
+  { src: '/images/family-manager-2.png', alt: 'Search & Category Filter', caption: 'Pencarian Instan & Filter Berdasarkan Kategori BIM' },
+  { src: '/images/family-manager-3.png', alt: 'Visual Previews & Detail', caption: 'Preview 3D & Detail Metadata Informasi RFA' },
+  { src: '/images/family-manager-4.png', alt: 'Batch Loading & Highlight', caption: 'Kemudahan Load Banyak Family & Highlight di Browser' },
+  { src: '/images/family-manager-5.png', alt: 'Network & Cloud Folder Sync', caption: 'Sinkronisasi Folder Server Jarak Jauh & Cloud Storage' },
+  { src: '/images/family-manager-6.png', alt: 'Advanced Settings & Customization', caption: 'Pengaturan Kustomisasi & Manajemen Lisensi' },
+];
 
 export default function FamilyManagerPage() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6 text-white">
+    <div className="max-w-5xl mx-auto py-12 px-6 text-white">
       <BackButton label="Back to Documentation" href="/docs/getting-started" />
 
       <h1 className="text-4xl font-extrabold mb-4">Family Manager</h1>
@@ -40,15 +49,8 @@ export default function FamilyManagerPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-6">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <AppImage src="/images/family-manager-1.png" alt="Family Manager Interface" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
-            <AppImage src="/images/family-manager-2.png" alt="Search and Filter" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
-            <AppImage src="/images/family-manager-3.png" alt="Loading Families" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
-            <AppImage src="/images/family-manager-4.png" alt="Batch Operations" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
-            <AppImage src="/images/family-manager-5.png" alt="Cloud Sync" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
-            <AppImage src="/images/family-manager-6.png" alt="Advanced Options" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
-          </div>
+          <h2 className="text-2xl font-bold text-white mb-6">Interactive Showcase</h2>
+          <ImageSlideshow images={FAMILY_MANAGER_SLIDES} />
         </section>
       </div>
     </div>
