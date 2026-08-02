@@ -24,3 +24,9 @@ pnpm-debug.log*
 # Astro & temporary files
 .astro/
 .keep
+
+# Large media files
+*.gif
+*.mp4
+image for web/
+

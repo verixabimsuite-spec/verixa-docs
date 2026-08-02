@@ -1,4 +1,5 @@
 import { BackButton } from '@/components/BackButton';
+import Image from 'next/image';
 
 export default function FamilyManagerPage() {
   return (
@@ -38,9 +39,17 @@ export default function FamilyManagerPage() {
           </ol>
         </section>
 
-        <div className="w-full h-64 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-center my-8 text-gray-500 font-medium">
-          [ Screenshot Placeholder — Family Manager Interface ]
-        </div>
+        <section>
+          <h2 className="text-2xl font-bold text-white mb-6">Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Image src="/images/family-manager-1.png" alt="Family Manager Interface" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
+            <Image src="/images/family-manager-2.png" alt="Search and Filter" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
+            <Image src="/images/family-manager-3.png" alt="Loading Families" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
+            <Image src="/images/family-manager-4.png" alt="Batch Operations" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
+            <Image src="/images/family-manager-5.png" alt="Cloud Sync" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
+            <Image src="/images/family-manager-6.png" alt="Advanced Options" width={800} height={450} className="rounded-xl border border-gray-800 w-full h-auto" />
+          </div>
+        </section>
       </div>
     </div>
   );

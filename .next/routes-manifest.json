@@ -91,10 +91,22 @@
       "namedRegex": "^/features(?:/)?$"
     },
     {
+      "page": "/features/batch-sheet-maker",
+      "regex": "^/features/batch\\-sheet\\-maker(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/batch\\-sheet\\-maker(?:/)?$"
+    },
+    {
       "page": "/features/family-manager",
       "regex": "^/features/family\\-manager(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/features/family\\-manager(?:/)?$"
+    },
+    {
+      "page": "/features/smart-tag",
+      "regex": "^/features/smart\\-tag(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/smart\\-tag(?:/)?$"
     },
     {
       "page": "/future-releases",

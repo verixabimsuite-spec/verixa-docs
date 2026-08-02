@@ -75,9 +75,9 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard icon={<Box size={32} className="text-primary" />} title={t('home.features.familyManager.title')} description={t('home.features.familyManager.desc')} />
-            <FeatureCard icon={<Zap size={32} className="text-primary" />} title={t('home.features.autoAnnotation.title')} description={t('home.features.autoAnnotation.desc')} />
-            <FeatureCard icon={<Settings size={32} className="text-primary" />} title={t('home.features.batchSheet.title')} description={t('home.features.batchSheet.desc')} />
+            <FeatureCard href="/features/family-manager" icon={<Box size={32} className="text-primary" />} title={t('home.features.familyManager.title')} description={t('home.features.familyManager.desc')} />
+            <FeatureCard href="/features/smart-tag" icon={<Zap size={32} className="text-primary" />} title={t('home.features.autoAnnotation.title')} description={t('home.features.autoAnnotation.desc')} />
+            <FeatureCard href="/features/batch-sheet-maker" icon={<Settings size={32} className="text-primary" />} title={t('home.features.batchSheet.title')} description={t('home.features.batchSheet.desc')} />
           </div>
         </div>
       </section>
@@ -86,11 +86,11 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
+function FeatureCard({ icon, title, description, href }: { icon: React.ReactNode; title: string; description: string; href?: string }) {
+  const content = (
     <motion.div
       whileHover={{ y: -6 }}
-      className="p-8 rounded-2xl bg-gray-900 border border-gray-800 shadow-xl hover:border-primary/50 transition-colors"
+      className="p-8 rounded-2xl bg-gray-900 border border-gray-800 shadow-xl hover:border-primary/50 transition-colors h-full"
     >
       <div className="w-14 h-14 rounded-xl bg-background flex items-center justify-center mb-6">
         {icon}
@@ -99,4 +99,9 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
       <p className="text-gray-400 leading-relaxed">{description}</p>
     </motion.div>
   );
+
+  if (href) {
+    return <Link href={href} className="block h-full">{content}</Link>;
+  }
+  return content;
 }
