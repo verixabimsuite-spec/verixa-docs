@@ -1,5 +1,6 @@
 "use client";
 
+import { Check, X, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FeatureRow {
