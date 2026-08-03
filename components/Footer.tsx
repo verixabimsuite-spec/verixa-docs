@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Instagram } from 'lucide-react';
 import verixaLogo from '@/public/verixa-logo.jpg';
 
 export function Footer() {
@@ -20,9 +21,6 @@ export function Footer() {
           <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
             Professional BIM productivity ecosystem for Autodesk Revit. Streamline 3D family management, automated drafting, clash detection, and layout presentations.
           </p>
-          <div className="pt-2 text-xs text-gray-500">
-            Official Autodesk App Store Partner Solution
-          </div>
         </div>
 
         {/* Product & Solutions */}
@@ -42,12 +40,6 @@ export function Footer() {
             <li>
               <Link href="/release-notes" className="hover:text-white transition-colors">
                 Release Notes
-              </Link>
-            </li>
-            <li>
-              <Link href="/future-releases" className="hover:text-white transition-colors flex items-center gap-1.5">
-                Future Releases
-                <span className="bg-blue-500/20 text-blue-400 text-[10px] font-bold px-1.5 py-0.5 rounded">Roadmap</span>
               </Link>
             </li>
             <li>
@@ -111,7 +103,12 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto pt-12 mt-12 border-t border-gray-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
         <p>© {new Date().getFullYear()} Verixa BIM Suite. All rights reserved. Autodesk and Revit are registered trademarks of Autodesk, Inc.</p>
-        <p>Support Email: <a href="mailto:verixaidn@gmail.com" className="text-blue-400 hover:underline">verixaidn@gmail.com</a></p>
+        <div className="flex items-center gap-6">
+          <a href="https://www.instagram.com/verixa_idn/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+            <Instagram size={16} /> Instagram
+          </a>
+          <p>Support Email: <a href="mailto:verixaidn@gmail.com" className="text-blue-400 hover:underline">verixaidn@gmail.com</a></p>
+        </div>
       </div>
     </footer>
   );

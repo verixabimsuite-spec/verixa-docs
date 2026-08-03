@@ -42,7 +42,7 @@ export function HeroFloatingBadges() {
         className="hidden lg:flex absolute bottom-32 right-12 z-20 items-center gap-2.5 px-4 py-2 rounded-full bg-gray-900/80 border border-cyan-500/30 backdrop-blur-md shadow-[0_0_25px_rgba(6,182,212,0.2)] text-white text-xs font-semibold select-none pointer-events-none"
       >
         <span className="text-cyan-400">✅</span>
-        <span>Revit 2020 - 2025 Ready</span>
+        <span>Revit 2021 - 2027 Ready</span>
       </motion.div>
     </>
   );

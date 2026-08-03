@@ -51,17 +51,6 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* Development Roadmap */}
-        <section className="bg-gray-900 p-8 rounded-2xl border border-gray-800 text-center space-y-4">
-          <Compass className="text-blue-400 mx-auto" size={36} />
-          <h2 className="text-2xl font-bold">Development Roadmap</h2>
-          <p className="text-gray-400 text-sm max-w-xl mx-auto">
-            Explore planned features like AI Family Search, Parameter Manager, and Batch PDF Export.
-          </p>
-          <Link href="/future-releases" className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors inline-block mt-2">
-            View Public Roadmap →
-          </Link>
-        </section>
       </div>
     </main>
   );

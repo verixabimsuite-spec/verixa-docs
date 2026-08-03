@@ -12,7 +12,7 @@ const faqCategories = [
     items: [
       {
         q: 'Which Autodesk Revit versions are supported?',
-        a: 'Verixa BIM Suite supports Autodesk Revit 2021, 2022, 2023, 2024, 2025, and 2026 (64-bit Windows). A single multi-target setup installer automatically deploys the correct DLL assemblies for all installed Revit versions on your machine.',
+        a: 'Verixa BIM Suite supports Autodesk Revit 2021, 2022, 2023, 2024, 2025, 2026, and 2027 (64-bit Windows). A single multi-target setup installer automatically deploys the correct DLL assemblies for all installed Revit versions on your machine.',
       },
       {
         q: 'How do I install Verixa BIM Suite?',

@@ -70,12 +70,6 @@ export default function ContactPage() {
                   <p className="text-gray-400 text-sm">Monday – Friday: 09:00 – 17:00 (UTC+7)</p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-800 text-xs text-gray-400 leading-relaxed">
-              <p className="font-semibold text-gray-300 mb-1">Autodesk App Store Submission</p>
-              Official contact page for Verixa BIM Suite Autodesk App Store product listing and verification.
-            </div>
           </div>
 
           {/* Contact Form */}

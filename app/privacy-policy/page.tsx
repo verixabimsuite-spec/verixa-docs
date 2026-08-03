@@ -40,13 +40,6 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-white">4. Autodesk App Store Compliance</h2>
-            <p>
-              Verixa BIM Suite complies fully with Autodesk App Store Developer Guidelines. The software does not modify system files outside its installation directory or harvest user telemetry without consent.
-            </p>
-          </section>
-
-          <section className="space-y-3">
             <h2 className="text-xl font-bold text-white">5. Contact Information</h2>
             <p>
               If you have questions regarding this Privacy Policy, please contact our Data Protection Officer at: <a href="mailto:verixaidn@gmail.com" className="text-blue-400 hover:underline">verixaidn@gmail.com</a>.

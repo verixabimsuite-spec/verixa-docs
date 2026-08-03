@@ -26,7 +26,7 @@ const slugContent: Record<string, { title: string; subtitle: string; content: Re
     content: (
       <div className="space-y-6 text-gray-300 text-sm leading-relaxed">
         <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-200">
-          <strong>Autodesk App Store Official Partner:</strong> The installation process automatically deploys multi-target DLL assemblies to all supported Autodesk Revit versions (2021-2026).
+          <strong>Multi-Version Support:</strong> The installation process automatically deploys multi-target DLL assemblies to all supported Autodesk Revit versions (2021-2027).
         </div>
         <h3 className="text-lg font-bold text-white">Installation Steps</h3>
         <ol className="list-decimal pl-6 space-y-3">
@@ -45,7 +45,7 @@ const slugContent: Record<string, { title: string; subtitle: string; content: Re
       <div className="space-y-6 text-gray-300 text-sm leading-relaxed">
         <h3 className="text-lg font-bold text-white">Supported Environments</h3>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>Autodesk Revit:</strong> 2021, 2022, 2023, 2024, 2025, and 2026 (64-bit).</li>
+          <li><strong>Autodesk Revit:</strong> 2021, 2022, 2023, 2024, 2025, 2026, and 2027 (64-bit).</li>
           <li><strong>Operating System:</strong> Windows 10 / Windows 11 (64-bit).</li>
           <li><strong>RAM:</strong> 8 GB minimum (16 GB+ recommended for large BIM models).</li>
           <li><strong>GPU:</strong> DirectX 11 capable graphics card for Helix 3D Family Preview.</li>

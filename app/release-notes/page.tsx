@@ -22,7 +22,7 @@ const releaseHistory = [
     date: 'July 29, 2026',
     status: 'Initial Official Release',
     highlights: [
-      'Initial Release of Verixa BIM Suite for Autodesk Revit 2021-2026.',
+      'Initial Release of Verixa BIM Suite for Autodesk Revit 2021-2027.',
       'Family Manager with 3D viewport navigation and metadata inspection.',
       'Smart Tag & Auto Annotation with spatial quadrant collision avoidance.',
       'Sheet Manager & Batch Sheet Maker with Excel XLSX import support.',

@@ -19,7 +19,7 @@ export default function PricingPage() {
         {/* Pricing Content Container with Overlay Blur */}
         <div className="relative mb-20">
           {/* Blurred Cards Container */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 filter blur-md select-none pointer-events-none opacity-50">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 filter blur-md select-none pointer-events-none opacity-50">
             {/* Free Trial */}
             <PricingCard 
               title="Free Trial" 
@@ -49,19 +49,6 @@ export default function PricingPage() {
               ]}
             />
 
-            {/* Subscription */}
-            <PricingCard 
-              title="Subscription" 
-              price="TBA" 
-              duration="Monthly"
-              description="Flexible licensing for teams."
-              features={[
-                { name: "Everything in Perpetual", included: true },
-                { name: "Continuous Updates", included: true },
-                { name: "Cloud Asset Library", included: true },
-                { name: "Team Management", included: true },
-              ]}
-            />
           </div>
 
           {/* Coming Soon Glassmorphism Overlay */}

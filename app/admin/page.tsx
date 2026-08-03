@@ -9,7 +9,7 @@ export default function AdminDashboardPage() {
 
   const [licenses, setLicenses] = useState([
     { key: 'VRX-PERPETUAL-2026-ABCD-1234', customer: 'Studio Arch BIM Ltd', email: 'admin@studioarch.com', type: 'Perpetual', status: 'Active', devices: '2/2', source: 'Official Website', date: '2026-07-01' },
-    { key: 'VRX-SUB-2026-YEAR-8899', customer: 'Global BIM Consultants', email: 'licensing@globalbim.com', type: 'Subscription (Yearly)', status: 'Active', devices: '4/5', source: 'Autodesk App Store', date: '2026-07-15' },
+    { key: 'VRX-SUB-2026-YEAR-8899', customer: 'Global BIM Consultants', email: 'licensing@globalbim.com', type: 'Subscription (Yearly)', status: 'Active', devices: '4/5', source: 'Official Website', date: '2026-07-15' },
     { key: 'VRX-TRIAL-15D-9988-7766', customer: 'Freelance BIM Modeler', email: 'bim.mod@gmail.com', type: '15-Day Trial', status: 'Active Trial', devices: '1/1', source: 'In-Plugin Trial', date: '2026-07-28' },
     { key: 'VRX-GUMROAD-KEY-4433', customer: 'Structural Engineering Inc', email: 'tech@structeng.org', type: 'Perpetual', status: 'Revoked', devices: '0/2', source: 'Gumroad', date: '2026-06-12' },
   ]);

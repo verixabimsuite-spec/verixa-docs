@@ -52,7 +52,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Download
     'download.title': 'Download Verixa Suite',
-    'download.subtitle': 'Get the latest version for Autodesk Revit 2021-2024.',
+    'download.subtitle': 'Get the latest version for Autodesk Revit 2021-2027.',
     'download.version': 'Version 1.0.0',
     'download.releaseDate': 'Released on July 29, 2026 — Initial Release',
     'download.cta': 'Download for Windows',
@@ -134,7 +134,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Download
     'download.title': 'Unduh Verixa Suite',
-    'download.subtitle': 'Dapatkan versi terbaru untuk Autodesk Revit 2021-2024.',
+    'download.subtitle': 'Dapatkan versi terbaru untuk Autodesk Revit 2021-2027.',
     'download.version': 'Versi 1.0.0',
     'download.releaseDate': 'Dirilis pada 29 Juli 2026 — Rilis Perdana',
     'download.cta': 'Unduh untuk Windows',

@@ -13,7 +13,7 @@ interface FaqItem {
 const FAQ_DATA: FaqItem[] = [
   {
     question: "Versi Autodesk Revit berapa saja yang didukung oleh Verixa Suite?",
-    answer: "Verixa Suite mendukung Autodesk Revit versi 2020, 2021, 2022, 2023, 2024, hingga 2025 (64-bit) secara penuh baik di Windows 10 maupun Windows 11.",
+    answer: "Verixa Suite mendukung Autodesk Revit versi 2021, 2022, 2023, 2024, 2025, 2026, hingga 2027 (64-bit) secara penuh baik di Windows 10 maupun Windows 11.",
     category: "Kompatibilitas"
   },
   {

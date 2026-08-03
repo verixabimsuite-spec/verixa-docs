@@ -16,7 +16,6 @@ export const baseOptions = {
     { text: 'Features', url: '/features/family-manager' },
     { text: 'Downloads', url: '/download' },
     { text: 'Pricing', url: '/pricing' },
-    { text: 'Roadmap', url: '/future-releases' },
     { text: 'FAQ', url: '/faq' },
     { text: 'Support', url: '/support' },
     { text: 'About', url: '/about' },

@@ -57,7 +57,7 @@ export default function DownloadPage() {
               </div>
               <h3 className="text-xl font-bold">User Manual (PDF)</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Complete printable offline User Manual and Autodesk App Store documentation guide in PDF format.
+                Complete printable offline User Manual and documentation guide in PDF format.
               </p>
             </div>
             <button className="w-full py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors">
