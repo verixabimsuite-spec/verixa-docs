@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, Github, MessageSquare, Globe, CheckCircle2 } from 'lucide-react';
 import { BackButton } from '@/components/BackButton';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
@@ -23,11 +25,11 @@ export default function ContactPage() {
         
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-4">
-            <Mail size={16} /> Get In Touch
+            <Mail size={16} /> {t('contact.badge')}
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{t('contact.title')}</h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Have questions about licensing, enterprise deployment, or technical support? Send us a message!
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -35,14 +37,14 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="bg-gray-900 p-8 rounded-2xl border border-gray-800 space-y-6">
-              <h2 className="text-xl font-bold text-white mb-4">Direct Contact</h2>
+              <h2 className="text-xl font-bold text-white mb-4">{t('contact.direct')}</h2>
               
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm text-gray-300">Support Email</h3>
+                  <h3 className="font-semibold text-sm text-gray-300">{t('contact.email')}</h3>
                   <a href="mailto:verixaidn@gmail.com" className="text-blue-400 hover:underline text-sm font-medium">
                     verixaidn@gmail.com
                   </a>
@@ -54,7 +56,7 @@ export default function ContactPage() {
                   <Github size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm text-gray-300">GitHub Repository</h3>
+                  <h3 className="font-semibold text-sm text-gray-300">{t('contact.github')}</h3>
                   <a href="https://github.com/verixabimsuite-spec/verixa-docs" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline text-sm font-medium">
                     github.com/verixabimsuite-spec
                   </a>

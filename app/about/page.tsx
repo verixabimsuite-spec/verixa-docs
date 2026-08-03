@@ -3,17 +3,19 @@
 import { Building2, Target, ShieldCheck, Cpu, Compass, Eye } from 'lucide-react';
 import Link from 'next/link';
 import { BackButton } from '@/components/BackButton';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AboutPage() {
+  const { t } = useLanguage();
   return (
     <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white py-12 px-6">
       <div className="max-w-5xl mx-auto w-full space-y-12">
         <BackButton label="Back to Home" />
 
         <section className="text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">About Verixa BIM Suite</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">{t('about.title')}</h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Professional productivity software solution engineered specifically for Autodesk Revit users, BIM Managers, and MEP engineers.
+            {t('about.subtitle')}
           </p>
         </section>
 
@@ -23,9 +25,9 @@ export default function AboutPage() {
             <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400 w-fit">
               <Target size={28} />
             </div>
-            <h2 className="text-2xl font-bold text-white">Our Mission</h2>
+            <h2 className="text-2xl font-bold text-white">{t('about.mission.title')}</h2>
             <p className="text-gray-400 text-sm leading-relaxed">
-              To eliminate repetitive manual BIM tasks, accelerate sheet production, and deliver real-time coordination tools directly within the Autodesk Revit interface.
+              {t('about.mission.desc')}
             </p>
           </div>
 
@@ -33,9 +35,9 @@ export default function AboutPage() {
             <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400 w-fit">
               <Eye size={28} />
             </div>
-            <h2 className="text-2xl font-bold text-white">Our Vision</h2>
+            <h2 className="text-2xl font-bold text-white">{t('about.vision.title')}</h2>
             <p className="text-gray-400 text-sm leading-relaxed">
-              To become the leading productivity add-in ecosystem for AEC professionals worldwide, setting new benchmarks for 3D family inspection and zero-export clash detection.
+              {t('about.vision.desc')}
             </p>
           </div>
         </section>

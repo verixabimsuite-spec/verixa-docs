@@ -3,17 +3,19 @@
 import { motion } from 'framer-motion';
 import { Check, X, Lock } from 'lucide-react';
 import { BackButton } from '@/components/BackButton';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 import { PricingMatrix } from '@/components/PricingMatrix';
 
 export default function PricingPage() {
+  const { t } = useLanguage();
   return (
     <main className="flex-1 w-full flex flex-col bg-background text-text py-20 px-6 relative">
       <div className="max-w-6xl mx-auto w-full">
         <BackButton label="Back to Home" />
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Simple, Transparent Pricing</h1>
-          <p className="text-xl text-secondaryText">Choose the right plan for your BIM workflow.</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{t('pricing.title')}</h1>
+          <p className="text-xl text-secondaryText">{t('pricing.subtitle')}</p>
         </div>
 
         {/* Pricing Content Container with Overlay Blur */}
@@ -22,30 +24,33 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 filter blur-md select-none pointer-events-none opacity-50">
             {/* Free Trial */}
             <PricingCard 
-              title="Free Trial" 
+              title={t('pricing.free.title')} 
               price="$0" 
-              duration="14 Days"
-              description="Perfect for testing Verixa Suite."
+              duration={t('pricing.free.duration')}
+              description={t('pricing.free.desc')}
+              cta={t('pricing.cta')}
               features={[
-                { name: "Full access to Family Manager", included: true },
-                { name: "Batch Sheet Maker", included: true },
-                { name: "Auto Annotation & Smart Tag", included: true },
-                { name: "Email Support", included: false },
+                { name: t('pricing.f.1'), included: true },
+                { name: t('pricing.f.2'), included: true },
+                { name: t('pricing.f.3'), included: true },
+                { name: t('pricing.f.4'), included: false },
               ]}
             />
 
             {/* Perpetual License */}
             <PricingCard 
-              title="Perpetual License" 
+              title={t('pricing.perpetual.title')} 
               price="$499" 
-              duration="One-time"
+              duration={t('pricing.perpetual.duration')}
               isPopular={true}
-              description="Lifetime access to current version."
+              popularText={t('pricing.mostPopular')}
+              description={t('pricing.perpetual.desc')}
+              cta={t('pricing.cta')}
               features={[
-                { name: "Full access to all features", included: true },
-                { name: "No watermarks", included: true },
-                { name: "1 Year of updates", included: true },
-                { name: "Priority Email Support", included: true },
+                { name: t('pricing.p.1'), included: true },
+                { name: t('pricing.p.2'), included: true },
+                { name: t('pricing.p.3'), included: true },
+                { name: t('pricing.p.4'), included: true },
               ]}
             />
 
@@ -56,9 +61,9 @@ export default function PricingPage() {
             <div className="p-4 bg-blue-500/10 rounded-full border border-blue-500/30 mb-4 text-blue-400">
               <Lock size={36} />
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">Pricing Coming Soon</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">{t('pricing.overlay.title')}</h2>
             <p className="text-gray-300 max-w-md text-base md:text-lg">
-              Official commercial pricing & licensing plans have not been released yet. Stay tuned for updates!
+              {t('pricing.overlay.desc')}
             </p>
           </div>
         </div>
@@ -70,12 +75,12 @@ export default function PricingPage() {
   );
 }
 
-function PricingCard({ title, price, duration, description, features, isPopular = false }: any) {
+function PricingCard({ title, price, duration, description, features, isPopular = false, cta, popularText }: any) {
   return (
     <div className={`relative p-8 rounded-2xl bg-card border ${isPopular ? 'border-primary' : 'border-gray-800'}`}>
-      {isPopular && (
+      {isPopular && popularText && (
         <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-          Most Popular
+          {popularText}
         </span>
       )}
       <h3 className="text-2xl font-bold mb-2">{title}</h3>
@@ -84,8 +89,8 @@ function PricingCard({ title, price, duration, description, features, isPopular 
         <span className="text-5xl font-extrabold">{price}</span>
         <span className="text-secondaryText"> / {duration}</span>
       </div>
-      <button className="w-full py-3 rounded-lg font-semibold mb-8 bg-gray-800 text-white">
-        Get Started
+      <button className="w-full py-3 rounded-lg font-semibold mb-8 bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+        {cta || "Get Started"}
       </button>
       <ul className="space-y-4 text-sm">
         {features.map((f: any, i: number) => (
