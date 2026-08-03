@@ -70,6 +70,7 @@ export default function ContactPage() {
                   <p className="text-gray-400 text-sm">Monday – Friday: 09:00 – 17:00 (UTC+7)</p>
                 </div>
               </div>
+            </div>
           </div>
 
           {/* Contact Form */}
