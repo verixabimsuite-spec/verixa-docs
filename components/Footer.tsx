@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 import verixaLogo from '@/public/verixa-logo.jpg';
 
 export function Footer() {
@@ -38,13 +38,23 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/release-notes" className="hover:text-white transition-colors">
-                Release Notes
+              <Link href="/pricing" className="hover:text-white transition-colors">
+                Pricing & Plans
               </Link>
             </li>
             <li>
-              <Link href="/pricing" className="hover:text-white transition-colors">
-                Pricing
+              <a 
+                href="https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-blue-400 hover:text-blue-300 font-semibold transition-colors flex items-center gap-1"
+              >
+                Buy License (Lemon Squeezy)
+              </a>
+            </li>
+            <li>
+              <Link href="/release-notes" className="hover:text-white transition-colors">
+                Release Notes
               </Link>
             </li>
           </ul>
@@ -63,6 +73,16 @@ export function Footer() {
               <Link href="/support" className="hover:text-white transition-colors">
                 Support Hub
               </Link>
+            </li>
+            <li>
+              <a 
+                href="https://www.youtube.com/@Verixa-tools" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                YouTube Tutorials
+              </a>
             </li>
             <li>
               <Link href="/about" className="hover:text-white transition-colors">
@@ -104,6 +124,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto pt-12 mt-12 border-t border-gray-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
         <p>© {new Date().getFullYear()} Verixa BIM Suite. All rights reserved. Autodesk and Revit are registered trademarks of Autodesk, Inc.</p>
         <div className="flex items-center gap-6">
+          <a href="https://www.youtube.com/@Verixa-tools" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors flex items-center gap-2">
+            <Youtube size={16} /> YouTube
+          </a>
           <a href="https://www.instagram.com/verixa_idn/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
             <Instagram size={16} /> Instagram
           </a>
@@ -113,3 +136,4 @@ export function Footer() {
     </footer>
   );
 }
+

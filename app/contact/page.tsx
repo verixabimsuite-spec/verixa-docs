@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Github, MessageSquare, Globe, CheckCircle2 } from 'lucide-react';
+import { Mail, Send, Github, MessageSquare, Globe, CheckCircle2, Youtube } from 'lucide-react';
 import { BackButton } from '@/components/BackButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -47,6 +47,18 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-sm text-gray-300">{t('contact.email')}</h3>
                   <a href="mailto:verixaidn@gmail.com" className="text-blue-400 hover:underline text-sm font-medium">
                     verixaidn@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-red-500/10 rounded-xl text-red-500">
+                  <Youtube size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sm text-gray-300">YouTube Channel</h3>
+                  <a href="https://www.youtube.com/@Verixa-tools" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline text-sm font-medium">
+                    youtube.com/@Verixa-tools
                   </a>
                 </div>
               </div>

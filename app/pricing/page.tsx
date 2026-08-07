@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Check, X, Lock } from 'lucide-react';
+import { Check, X, ShoppingCart, ShieldCheck, Download, ExternalLink } from 'lucide-react';
 import { BackButton } from '@/components/BackButton';
 import { useLanguage } from '@/contexts/LanguageContext';
-
 import { PricingMatrix } from '@/components/PricingMatrix';
+
+export const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
 
 export default function PricingPage() {
   const { t } = useLanguage();
@@ -15,20 +16,26 @@ export default function PricingPage() {
         <BackButton label="Back to Home" />
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{t('pricing.title')}</h1>
-          <p className="text-xl text-secondaryText">{t('pricing.subtitle')}</p>
+          <p className="text-xl text-secondaryText mb-4">{t('pricing.subtitle')}</p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
+            <ShieldCheck size={18} />
+            <span>{t('pricing.guarantee')}</span>
+          </div>
         </div>
 
-        {/* Pricing Content Container with Overlay Blur */}
+        {/* Active Pricing Cards Container */}
         <div className="relative mb-20">
-          {/* Blurred Cards Container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 filter blur-md select-none pointer-events-none opacity-50">
-            {/* Free Trial */}
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
+            {/* Free Trial Card */}
             <PricingCard 
               title={t('pricing.free.title')} 
               price="$0" 
               duration={t('pricing.free.duration')}
               description={t('pricing.free.desc')}
-              cta={t('pricing.cta')}
+              cta={t('pricing.cta.trial')}
+              checkoutUrl="/download"
+              isExternal={false}
+              icon={<Download size={18} />}
               features={[
                 { name: t('pricing.f.1'), included: true },
                 { name: t('pricing.f.2'), included: true },
@@ -37,7 +44,7 @@ export default function PricingPage() {
               ]}
             />
 
-            {/* Perpetual License */}
+            {/* Perpetual License Card (Lemon Squeezy Direct Checkout) */}
             <PricingCard 
               title={t('pricing.perpetual.title')} 
               price="$499" 
@@ -45,7 +52,10 @@ export default function PricingPage() {
               isPopular={true}
               popularText={t('pricing.mostPopular')}
               description={t('pricing.perpetual.desc')}
-              cta={t('pricing.cta')}
+              cta={t('pricing.cta.buy')}
+              checkoutUrl={LEMON_SQUEEZY_CHECKOUT_URL}
+              isExternal={true}
+              icon={<ShoppingCart size={18} />}
               features={[
                 { name: t('pricing.p.1'), included: true },
                 { name: t('pricing.p.2'), included: true },
@@ -53,18 +63,6 @@ export default function PricingPage() {
                 { name: t('pricing.p.4'), included: true },
               ]}
             />
-
-          </div>
-
-          {/* Coming Soon Glassmorphism Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/40 backdrop-blur-sm rounded-3xl p-6 text-center z-10 border border-blue-500/20 shadow-2xl">
-            <div className="p-4 bg-blue-500/10 rounded-full border border-blue-500/30 mb-4 text-blue-400">
-              <Lock size={36} />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">{t('pricing.overlay.title')}</h2>
-            <p className="text-gray-300 max-w-md text-base md:text-lg">
-              {t('pricing.overlay.desc')}
-            </p>
           </div>
         </div>
 
@@ -75,35 +73,73 @@ export default function PricingPage() {
   );
 }
 
-function PricingCard({ title, price, duration, description, features, isPopular = false, cta, popularText }: any) {
+function PricingCard({ 
+  title, 
+  price, 
+  duration, 
+  description, 
+  features, 
+  isPopular = false, 
+  cta, 
+  popularText, 
+  checkoutUrl, 
+  isExternal = false,
+  icon
+}: any) {
   return (
-    <div className={`relative p-8 rounded-2xl bg-card border ${isPopular ? 'border-primary' : 'border-gray-800'}`}>
+    <div className={`relative p-8 rounded-2xl bg-gray-900/90 border flex flex-col justify-between transition-all hover:border-primary/60 ${
+      isPopular 
+        ? 'border-primary shadow-[0_0_35px_-5px_rgba(59,130,246,0.3)] ring-1 ring-primary/40' 
+        : 'border-gray-800'
+    }`}>
       {isPopular && popularText && (
-        <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+        <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-lg">
           {popularText}
         </span>
       )}
-      <h3 className="text-2xl font-bold mb-2">{title}</h3>
-      <p className="text-secondaryText text-sm mb-6 h-10">{description}</p>
-      <div className="mb-8">
-        <span className="text-5xl font-extrabold">{price}</span>
-        <span className="text-secondaryText"> / {duration}</span>
+      <div>
+        <h3 className="text-2xl font-bold mb-2 text-white">{title}</h3>
+        <p className="text-gray-400 text-sm mb-6 h-12">{description}</p>
+        <div className="mb-8">
+          <span className="text-5xl font-extrabold text-white">{price}</span>
+          <span className="text-gray-400 font-medium"> / {duration}</span>
+        </div>
+
+        {checkoutUrl ? (
+          <a
+            href={checkoutUrl}
+            target={isExternal ? "_blank" : "_self"}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            className={`w-full py-4 px-6 rounded-xl font-bold mb-8 text-center flex items-center justify-center gap-2 transition-all ${
+              isPopular
+                ? 'bg-primary hover:bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98]'
+                : 'bg-gray-800 hover:bg-gray-700 text-white hover:scale-[1.02] active:scale-[0.98]'
+            }`}
+          >
+            {icon}
+            <span>{cta || "Get Started"}</span>
+            {isExternal && <ExternalLink size={14} className="opacity-70 ml-0.5" />}
+          </a>
+        ) : (
+          <button className="w-full py-4 px-6 rounded-xl font-bold mb-8 bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+            {cta || "Get Started"}
+          </button>
+        )}
+
+        <ul className="space-y-4 text-sm">
+          {features.map((f: any, i: number) => (
+            <li key={i} className="flex items-center gap-3">
+              {f.included ? (
+                <Check size={18} className="text-blue-400 flex-shrink-0" />
+              ) : (
+                <X size={18} className="text-gray-600 flex-shrink-0" />
+              )}
+              <span className={f.included ? 'text-gray-200' : 'text-gray-500'}>{f.name}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <button className="w-full py-3 rounded-lg font-semibold mb-8 bg-gray-800 text-white hover:bg-gray-700 transition-colors">
-        {cta || "Get Started"}
-      </button>
-      <ul className="space-y-4 text-sm">
-        {features.map((f: any, i: number) => (
-          <li key={i} className="flex items-center gap-3">
-            {f.included ? (
-              <Check size={18} className="text-primary" />
-            ) : (
-              <X size={18} className="text-gray-600" />
-            )}
-            <span className={f.included ? 'text-gray-300' : 'text-gray-600'}>{f.name}</span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
+

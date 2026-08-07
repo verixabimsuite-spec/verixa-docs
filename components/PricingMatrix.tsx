@@ -1,7 +1,10 @@
 "use client";
 
-import { Check, X, Sparkles } from 'lucide-react';
+import { Check, X, Sparkles, ShoppingCart, Download, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
+
+const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
 
 interface FeatureRow {
   name: string;
@@ -77,6 +80,34 @@ export function PricingMatrix() {
                 </tr>
               ))}
             </tbody>
+            <tfoot>
+              <tr className="bg-gray-900/90 border-t border-gray-800">
+                <td className="p-5 text-sm font-semibold text-gray-300">
+                  Select Package
+                </td>
+                <td className="p-5 text-center">
+                  <Link
+                    href="/download"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-medium text-xs md:text-sm transition-colors"
+                  >
+                    <Download size={15} />
+                    <span>Free Trial</span>
+                  </Link>
+                </td>
+                <td className="p-5 text-center bg-primary/10 border-x border-primary/20">
+                  <a
+                    href={LEMON_SQUEEZY_CHECKOUT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-xs md:text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-105"
+                  >
+                    <ShoppingCart size={15} />
+                    <span>Buy License ($499)</span>
+                    <ExternalLink size={12} className="opacity-70" />
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
@@ -94,3 +125,4 @@ function renderCell(value: boolean | string) {
   }
   return <span className="font-semibold text-gray-300">{value}</span>;
 }
+

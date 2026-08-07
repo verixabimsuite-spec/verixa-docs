@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Mail, MessageSquare, Bug, FileQuestion, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, MessageSquare, Bug, FileQuestion, Clock, ShieldCheck, Youtube, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { BackButton } from '@/components/BackButton';
 
@@ -18,9 +18,9 @@ export default function SupportPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SupportCard icon={<Mail className="text-blue-400" size={32} />} title="Direct Email Support" description="Reach out directly to our technical engineering support team for licensing or installation queries." action="verixaidn@gmail.com" href="mailto:verixaidn@gmail.com" />
+          <SupportCard icon={<Youtube className="text-red-500" size={32} />} title="Video Tutorials (YouTube)" description="Watch step-by-step video guides, family manager walk-throughs, and feature demos on our YouTube channel." action="Visit YouTube Channel →" href="https://www.youtube.com/@Verixa-tools" isExternal={true} />
           <SupportCard icon={<FileQuestion className="text-blue-400" size={32} />} title="Documentation & Guides" description="Browse detailed guides, activation instructions, and troubleshooting steps in our docs portal." action="Explore Documentation →" href="/docs/getting-started" />
           <SupportCard icon={<Bug className="text-blue-400" size={32} />} title="Bug Reports" description="Found an issue in Revit? Submit a bug report with log details for fast resolution." action="Report an Issue →" href="/contact" />
-          <SupportCard icon={<MessageSquare className="text-blue-400" size={32} />} title="Feature Requests" description="Have an idea to improve your Revit workflow? Suggest features for upcoming releases." action="Submit Feature Request →" href="/contact" />
         </div>
 
         {/* Support Hours & Response Time */}
@@ -58,7 +58,7 @@ export default function SupportPage() {
   );
 }
 
-function SupportCard({ icon, title, description, action, href }: any) {
+function SupportCard({ icon, title, description, action, href, isExternal = false }: any) {
   return (
     <motion.div whileHover={{ y: -5 }} className="bg-gray-900 p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
       <div>
@@ -66,9 +66,15 @@ function SupportCard({ icon, title, description, action, href }: any) {
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-gray-400 text-sm leading-relaxed mb-6">{description}</p>
       </div>
-      <Link href={href} className="text-blue-400 font-semibold hover:underline text-sm flex items-center gap-2">
-        {action}
-      </Link>
+      {isExternal ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-400 font-semibold hover:underline text-sm flex items-center gap-2">
+          {action}
+        </a>
+      ) : (
+        <Link href={href} className="text-blue-400 font-semibold hover:underline text-sm flex items-center gap-2">
+          {action}
+        </Link>
+      )}
     </motion.div>
   );
 }
