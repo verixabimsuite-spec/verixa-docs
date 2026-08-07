@@ -39,7 +39,7 @@ export default function HomePage() {
         </nav>
         <div className="flex items-center gap-3">
           <LanguageToggle />
-          <Link href="/download" className="px-5 py-2 rounded-full bg-primary hover:bg-blue-600 transition-colors font-medium text-sm text-white">
+          <Link href="/pricing" className="px-5 py-2 rounded-full bg-primary hover:bg-blue-600 transition-colors font-medium text-sm text-white">
             {t('nav.getStarted')}
           </Link>
         </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
             {t('home.hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/download" className="px-8 py-4 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-lg flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]">
+            <Link href="/pricing" className="px-8 py-4 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-lg flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]">
               {t('home.hero.cta.download')} <ArrowRight size={20} />
             </Link>
             <Link href="/docs/getting-started" className="px-8 py-4 rounded-full bg-gray-800/80 hover:bg-gray-700/80 text-white font-semibold text-lg flex items-center justify-center transition-all backdrop-blur-md border border-gray-700/50">

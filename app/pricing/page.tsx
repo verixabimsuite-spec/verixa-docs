@@ -47,7 +47,7 @@ export default function PricingPage() {
             {/* Perpetual License Card (Lemon Squeezy Direct Checkout) */}
             <PricingCard 
               title={t('pricing.perpetual.title')} 
-              price="$499" 
+              price="$79" 
               duration={t('pricing.perpetual.duration')}
               isPopular={true}
               popularText={t('pricing.mostPopular')}

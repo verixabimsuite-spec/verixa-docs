@@ -102,7 +102,7 @@ export function PricingMatrix() {
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-xs md:text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-105"
                   >
                     <ShoppingCart size={15} />
-                    <span>Buy License ($499)</span>
+                    <span>Buy License ($79)</span>
                     <ExternalLink size={12} className="opacity-70" />
                   </a>
                 </td>
