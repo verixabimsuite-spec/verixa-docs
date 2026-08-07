@@ -33,7 +33,7 @@ git add .
 
 echo.
 echo [3/4] Menyimpan perubahan...
-git commit -m "feat: update pricing blur overlay & download page to v1.0.0"
+git commit -m "feat: connect 7-day free trial button to direct .exe installer download"
 git branch -M main
 
 echo.

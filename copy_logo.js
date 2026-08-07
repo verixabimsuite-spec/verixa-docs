@@ -15,3 +15,20 @@ if (fs.existsSync(src)) {
 } else {
   console.error('Source image file not found at:', src);
 }
+
+// Copy installer .exe from Output folder to public/downloads
+const installerSrc = 'C:\\Users\\AGS\\Documents\\PROJECT PLUGINS\\VERIXA\\VERIXA v1.4_20260725\\Output\\VerixaBimSuite_v1.0.0_Setup.exe';
+const downloadsDestDir = path.join(__dirname, 'public', 'downloads');
+const installerDest = path.join(downloadsDestDir, 'VerixaBimSuite_v1.0.0_Setup.exe');
+
+if (!fs.existsSync(downloadsDestDir)) {
+  fs.mkdirSync(downloadsDestDir, { recursive: true });
+}
+
+if (fs.existsSync(installerSrc)) {
+  fs.copyFileSync(installerSrc, installerDest);
+  console.log('Installer .exe copied successfully to:', installerDest);
+} else {
+  console.error('Installer .exe source not found at:', installerSrc);
+}
+
