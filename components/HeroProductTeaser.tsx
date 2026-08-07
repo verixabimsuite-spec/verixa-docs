@@ -1,49 +1,38 @@
 "use client";
 
-import { motion } from 'framer-motion';
 import { AppImage } from '@/components/AppImage';
 
 export function HeroProductTeaser() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-      className="w-full max-w-5xl mx-auto mt-14 px-4 z-20 relative"
-    >
-      {/* Outer Glow halo */}
-      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 opacity-30 blur-2xl group-hover:opacity-100 transition duration-1000 animate-pulse pointer-events-none" />
-
-      {/* Glassmorphic Window Mockup */}
-      <div className="relative rounded-2xl bg-gray-950/90 border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden backdrop-blur-xl">
-        {/* Window Top Bar */}
-        <div className="px-4 py-3 bg-gray-900/90 border-b border-gray-800 flex items-center justify-between">
+    <div className="w-full max-w-5xl mx-auto mt-12 px-2">
+      {/* Clean Autodesk-Style App Window Frame */}
+      <div className="rounded-lg bg-[#0F172A] border border-gray-700 shadow-2xl overflow-hidden">
+        {/* Window Top Navigation Bar */}
+        <div className="px-4 py-2.5 bg-[#1E293B] border-b border-gray-700 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
-            <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
-            <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block" />
           </div>
-          <span className="text-xs text-gray-400 font-mono font-medium tracking-wide">
-            Verixa BIM Suite v1.4 — Autodesk Revit Dockable Panel
-          </span>
-          <div className="w-12" />
+          <div className="flex items-center gap-2 text-xs text-gray-300 font-mono">
+            <span className="px-2 py-0.5 rounded bg-gray-800 border border-gray-700 text-[11px] text-gray-400">Autodesk Revit</span>
+            <span>Verixa BIM Suite v1.4 — Dockable Workspace Panel</span>
+          </div>
+          <div className="w-10" />
         </div>
 
-        {/* Product Screenshot */}
-        <div className="relative group overflow-hidden">
+        {/* Real Screenshot Preview */}
+        <div className="relative overflow-hidden bg-gray-900">
           <AppImage
             src="/images/family-manager-1.png"
-            alt="Verixa BIM Suite Interface Preview"
+            alt="Verixa BIM Suite Interface Preview in Revit"
             width={1280}
             height={720}
-            className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+            className="w-full h-auto object-cover"
             priority
           />
-
-          {/* Bottom Gradient Fade */}
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent pointer-events-none" />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

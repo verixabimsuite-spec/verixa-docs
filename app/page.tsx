@@ -1,15 +1,13 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Box, Zap, Settings, ShieldCheck, Download, ShoppingCart, Sparkles, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowRight, CheckCircle2, Download, ShoppingCart, Box, Zap, FileSpreadsheet, Layers, ShieldCheck, Cpu, HardDrive } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { AppImage } from '@/components/AppImage';
 
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { PricingMatrix } from '@/components/PricingMatrix';
-import { HeroFloatingBadges } from '@/components/HeroFloatingBadges';
 import { HeroProductTeaser } from '@/components/HeroProductTeaser';
-import { HeroStatsBar } from '@/components/HeroStatsBar';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
@@ -19,115 +17,269 @@ export default function HomePage() {
   const { t } = useLanguage();
 
   return (
-    <main className="flex-1 w-full flex flex-col bg-[#0B1120] text-white overflow-hidden">
+    <main className="flex-1 w-full flex flex-col bg-[#0B0F19] text-gray-100 font-sans">
       
-      {/* Autodesk-Style Hero Section */}
-      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 overflow-hidden border-b border-gray-800/60">
-        
-        {/* Subtle Ambient Mesh Halos */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-gradient-to-r from-blue-600/15 via-cyan-500/15 to-purple-600/15 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293715_1px,transparent_1px),linear-gradient(to_bottom,#1f293715_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* Clean Autodesk Corporate Hero Section */}
+      <section className="w-full py-16 md:py-24 px-6 border-b border-gray-800 bg-[#0F172A]">
+        <div className="max-w-6xl mx-auto text-center space-y-6">
+          
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-semibold uppercase tracking-wider">
+            <span>Autodesk® Revit® 2021 – 2027 Native Plugin Ecosystem</span>
+          </div>
 
-        {/* Animated Compatibility Pill */}
-        <div className="z-10 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-8 shadow-sm">
-          <Sparkles size={14} className="text-blue-400" />
-          <span>Autodesk® Revit® 2021 – 2027 Native Plugin Ecosystem</span>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="z-10 max-w-4xl"
-        >
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 leading-[1.1] text-white">
-            Accelerate Your <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">Autodesk Revit</span> Productivity
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+            Automate Repetitive Revit Drafting & Manage 3D BIM Families
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-normal leading-relaxed">
-            Eliminate repetitive drafting tasks, organize 3D family libraries, automated tagging, and generate hundreds of sheets in seconds.
+
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Built specifically for BIM Managers, Architects, and Structural Drafters. Verixa BIM Suite integrates directly into your Autodesk Revit workspace to eliminate manual tagging, streamline sheet creation from Excel, and organize RFA family libraries.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* Primary Download CTA */}
+          {/* Action CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a 
               href={INSTALLER_DOWNLOAD_URL}
               download="VerixaBimSuite_Setup_v1.0.0.exe"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base flex items-center justify-center gap-3 transition-all hover:scale-[1.02] shadow-lg shadow-blue-600/30"
+              className="w-full sm:w-auto px-7 py-3.5 rounded bg-[#006699] hover:bg-[#005580] text-white font-bold text-sm flex items-center justify-center gap-2.5 transition-colors shadow-md"
             >
-              <Download size={20} />
+              <Download size={18} />
               <span>Download 7-Day Free Trial (.exe)</span>
             </a>
 
-            {/* Buy Commercial License */}
             <a 
               href={LEMON_SQUEEZY_CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-900 hover:bg-gray-800 text-white font-semibold text-base flex items-center justify-center gap-3 transition-all border border-gray-700/80 hover:border-gray-600"
+              className="w-full sm:w-auto px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2.5 transition-colors border border-gray-700"
             >
-              <ShoppingCart size={20} className="text-emerald-400" />
+              <ShoppingCart size={18} className="text-emerald-400" />
               <span>Buy Commercial License ($79)</span>
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-xs text-gray-400 font-medium">
+          <div className="flex flex-wrap justify-center items-center gap-6 pt-3 text-xs text-gray-400 font-medium">
             <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-emerald-400" /> No credit card required</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-emerald-400" /> Instant Setup (.exe)</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-emerald-400" /> Full feature access</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-emerald-400" /> Standalone Setup Installer</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-emerald-400" /> 100% Offline Capable</span>
           </div>
-        </motion.div>
 
-        {/* Hero Interactive Teaser Window */}
-        <HeroProductTeaser />
+          {/* Real Software UI Showcase Header Window */}
+          <HeroProductTeaser />
+        </div>
       </section>
 
-      {/* Hero Performance Stats Bar */}
-      <HeroStatsBar />
+      {/* System Metrics Bar */}
+      <section className="w-full py-10 px-6 bg-[#0B1120] border-b border-gray-800">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-2xl md:text-3xl font-bold text-white mb-1">Revit 2021–2027</div>
+            <div className="text-xs text-gray-400">Full Version Compatibility</div>
+          </div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold text-white mb-1">Native C# API</div>
+            <div className="text-xs text-gray-400">Lightning-Fast Execution</div>
+          </div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold text-white mb-1">10x Speed</div>
+            <div className="text-xs text-gray-400">Faster Tagging & Sheet Setup</div>
+          </div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold text-white mb-1">Offline License</div>
+            <div className="text-xs text-gray-400">No Constant Internet Needed</div>
+          </div>
+        </div>
+      </section>
 
-      {/* Feature Modules Grid Showcase */}
-      <section className="w-full py-24 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-800/80 border border-gray-700/60 text-gray-300 text-xs font-semibold uppercase tracking-wider">
-              Core Capabilities
+      {/* Product Feature Showcase (Alternating Left-Right Autodesk Layout) */}
+      <section className="w-full py-20 px-6 space-y-24 max-w-7xl mx-auto">
+        
+        {/* Feature 1: Family Manager */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Screenshot */}
+          <div className="rounded-xl bg-[#0F172A] border border-gray-800 p-2 shadow-xl overflow-hidden">
+            <AppImage
+              src="/images/family-manager-1.png"
+              alt="Family Manager Interface in Revit"
+              width={800}
+              height={500}
+              className="w-full h-auto rounded border border-gray-800"
+            />
+          </div>
+          {/* Right Text Description */}
+          <div className="space-y-5">
+            <div className="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center gap-2">
+              <Box size={16} /> Module 01 — Family Management
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Enterprise-Grade Revit Automation
+            <h2 className="text-2xl sm:text-4xl font-bold text-white leading-snug">
+              Instant 3D Family Search & Organization
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg">
-              Engineered specifically for BIM Managers, Architects, and Structural Engineers to deliver projects up to 10x faster.
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Stop wasting time navigating slow Windows open dialogs. Family Manager automatically scans your local drives and network servers, generating visual 3D thumbnails for instant drag-and-drop placement directly into your active Revit views.
             </p>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Search thousands of RFA files by category, keyword, or parameter instantly.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Batch-load multiple family types into your active Revit project in one click.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Connects to local server NAS, Google Drive, OneDrive, and office network drives.</span>
+              </li>
+            </ul>
+            <div className="pt-2">
+              <Link 
+                href="/features/family-manager" 
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#006699] hover:text-blue-300 transition-colors"
+              >
+                <span>Explore Family Manager Workflow</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature 2: Smart Tag & Auto Annotation */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Text Description */}
+          <div className="space-y-5 order-2 lg:order-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+              <Zap size={16} /> Module 02 — Drafting Automation
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-bold text-white leading-snug">
+              Automated Room, Door, and Window Tagging
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Eliminate hundreds of hours spent manually placing tags and dimension lines. Smart Tag analyzes room geometry, wall boundaries, and view crop regions to position tags and spot elevations with zero element overlap.
+            </p>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>One-click room, door, and window tag generation across entire floor plans.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Automated exterior wall dimensioning and aligned spot elevation callouts.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Smart collision detection avoids overlapping drawing text and crop boundaries.</span>
+              </li>
+            </ul>
+            <div className="pt-2">
+              <Link 
+                href="/features/smart-tag" 
+                className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                <span>Explore Smart Tag Workflow</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+          {/* Right Screenshot */}
+          <div className="rounded-xl bg-[#0F172A] border border-gray-800 p-2 shadow-xl overflow-hidden order-1 lg:order-2">
+            <AppImage
+              src="/images/smart-tag-1.png"
+              alt="Smart Tag Interface in Revit"
+              width={800}
+              height={500}
+              className="w-full h-auto rounded border border-gray-800"
+            />
+          </div>
+        </div>
+
+        {/* Feature 3: Batch Sheet Maker */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Screenshot */}
+          <div className="rounded-xl bg-[#0F172A] border border-gray-800 p-2 shadow-xl overflow-hidden">
+            <AppImage
+              src="/images/batch-sheet-maker-1.png"
+              alt="Batch Sheet Maker Interface in Revit"
+              width={800}
+              height={500}
+              className="w-full h-auto rounded border border-gray-800"
+            />
+          </div>
+          {/* Right Text Description */}
+          <div className="space-y-5">
+            <div className="text-xs font-bold uppercase tracking-wider text-purple-400 flex items-center gap-2">
+              <FileSpreadsheet size={16} /> Module 03 — Documentation & Sheets
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-bold text-white leading-snug">
+              Generate Hundreds of Revit Sheets from Excel
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Transform your drawing package delivery. Import sheet list matrices directly from Excel schedules to generate complete drawing sheet sets, assign titleblocks, and align viewports automatically.
+            </p>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Direct Excel spreadsheet ingestion with custom parameter mapping.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Automated viewport placement for floor plans, elevations, and 3D views.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={18} className="text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>Ensures consistent titleblock numbering and drawing index organization.</span>
+              </li>
+            </ul>
+            <div className="pt-2">
+              <Link 
+                href="/features/batch-sheet-maker" 
+                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                <span>Explore Batch Sheet Maker Workflow</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Technical Specifications Grid */}
+      <section className="w-full py-16 px-6 bg-[#0F172A] border-y border-gray-800">
+        <div className="max-w-6xl mx-auto space-y-10">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">Technical Specifications & Requirements</h2>
+            <p className="text-gray-400 text-sm">Verixa BIM Suite is engineered for enterprise stability and performance.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <FeatureCard 
-              href="/features/family-manager" 
-              icon={<Box size={28} className="text-blue-400" />} 
-              badge="Module 01"
-              title="Family Manager" 
-              description="Organize, search, and insert 2D/3D Revit families from local drives or cloud servers with real-time thumbnail previews." 
-            />
-            <FeatureCard 
-              href="/features/smart-tag" 
-              icon={<Zap size={28} className="text-emerald-400" />} 
-              badge="Module 02"
-              title="Smart Tag & Annotation" 
-              description="Automatically place room tags, door/window marks, spot elevations, and dimensions without manual positioning." 
-            />
-            <FeatureCard 
-              href="/features/batch-sheet-maker" 
-              icon={<Settings size={28} className="text-purple-400" />} 
-              badge="Module 03"
-              title="Batch Sheet Maker" 
-              description="Create hundreds of Revit drawing sheets from Excel matrix spreadsheets in seconds with automatic view placement." 
-            />
-            <FeatureCard 
-              href="/features/layout-tools" 
-              icon={<ShieldCheck size={28} className="text-amber-400" />} 
-              badge="Module 04"
-              title="Layout & Clash Tools" 
-              description="Generate aligned 3D perspective views, section cuts, and quick clash detection previews for Revit elements." 
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-lg bg-[#1E293B] border border-gray-700/80 space-y-3">
+              <div className="p-2.5 w-fit rounded bg-blue-950 text-blue-400 border border-blue-800">
+                <Cpu size={20} />
+              </div>
+              <h3 className="text-lg font-bold text-white">Revit Integration</h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Written natively in C# utilizing official Autodesk Revit API endpoints. Dockable panel architecture ensures seamless integration with standard Revit ribbons.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-lg bg-[#1E293B] border border-gray-700/80 space-y-3">
+              <div className="p-2.5 w-fit rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
+                <HardDrive size={20} />
+              </div>
+              <h3 className="text-lg font-bold text-white">OS & Hardware</h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Compatible with Windows 10 & Windows 11 (64-bit). Works on standard workstation setups running Autodesk Revit 2021 through 2027.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-lg bg-[#1E293B] border border-gray-700/80 space-y-3">
+              <div className="p-2.5 w-fit rounded bg-purple-950 text-purple-400 border border-purple-800">
+                <ShieldCheck size={20} />
+              </div>
+              <h3 className="text-lg font-bold text-white">Licensing & Activation</h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Supports single-machine activation keys delivered instantly by Lemon Squeezy. Includes offline licensing mode for secure corporate networks.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -138,68 +290,37 @@ export default function HomePage() {
       {/* Interactive FAQ Accordion */}
       <FaqAccordion />
 
-      {/* Autodesk-Style Pre-Footer Call to Action Banner */}
-      <section className="w-full py-20 px-6 bg-gradient-to-b from-[#0B1120] via-blue-950/30 to-[#080D1A] border-t border-gray-800">
-        <div className="max-w-5xl mx-auto rounded-3xl bg-gray-900/90 border border-gray-800 p-10 md:p-16 text-center shadow-2xl relative overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10 space-y-6">
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">
-              Ready to Upgrade Your Revit Workflow?
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Download the free 7-day trial installer or secure your lifetime perpetual license with priority email support.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a
-                href={INSTALLER_DOWNLOAD_URL}
-                download="VerixaBimSuite_Setup_v1.0.0.exe"
-                className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base flex items-center justify-center gap-3 transition-all shadow-lg shadow-blue-600/25"
-              >
-                <Download size={20} />
-                <span>Start Free Trial (.exe)</span>
-              </a>
-              <a
-                href={LEMON_SQUEEZY_CHECKOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-base flex items-center justify-center gap-3 transition-all border border-gray-700"
-              >
-                <ShoppingCart size={20} className="text-emerald-400" />
-                <span>Buy License ($79)</span>
-              </a>
-            </div>
+      {/* Clean Autodesk Corporate Pre-Footer Call to Action */}
+      <section className="w-full py-16 px-6 bg-[#0F172A] border-t border-gray-800 text-center">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+            Start Streamlining Your Revit Workflows Today
+          </h2>
+          <p className="text-gray-300 text-base max-w-2xl mx-auto">
+            Test all features on your active projects with our full 7-day trial or purchase your lifetime perpetual license.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <a
+              href={INSTALLER_DOWNLOAD_URL}
+              download="VerixaBimSuite_Setup_v1.0.0.exe"
+              className="px-7 py-3.5 rounded bg-[#006699] hover:bg-[#005580] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+            >
+              <Download size={18} />
+              <span>Download Free Trial (.exe)</span>
+            </a>
+            <a
+              href={LEMON_SQUEEZY_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-gray-700"
+            >
+              <ShoppingCart size={18} className="text-emerald-400" />
+              <span>Buy Commercial License ($79)</span>
+            </a>
           </div>
         </div>
       </section>
 
     </main>
-  );
-}
-
-function FeatureCard({ icon, title, description, badge, href }: { icon: React.ReactNode; title: string; description: string; badge: string; href?: string }) {
-  return (
-    <Link href={href || "#"} className="group block h-full">
-      <motion.div
-        whileHover={{ y: -6 }}
-        className="p-8 rounded-2xl bg-gray-900/90 border border-gray-800 shadow-xl group-hover:border-blue-500/50 transition-all flex flex-col justify-between h-full relative"
-      >
-        <div>
-          <div className="flex items-center justify-between mb-6">
-            <div className="p-3 rounded-xl bg-gray-800 border border-gray-700/60 group-hover:bg-blue-500/10 group-hover:border-blue-500/30 transition-colors">
-              {icon}
-            </div>
-            <span className="text-[10px] font-mono font-semibold uppercase tracking-widest text-gray-500 bg-gray-800/60 px-2.5 py-1 rounded-md">
-              {badge}
-            </span>
-          </div>
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{title}</h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-6">{description}</p>
-        </div>
-        <div className="flex items-center gap-1.5 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
-          <span>Explore Details</span>
-          <ArrowRight size={14} />
-        </div>
-      </motion.div>
-    </Link>
   );
 }
