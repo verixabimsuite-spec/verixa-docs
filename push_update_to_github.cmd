@@ -33,7 +33,7 @@ git add .
 
 echo.
 echo [3/4] Menyimpan perubahan...
-git commit -m "feat: connect 7-day free trial button to direct .exe installer download"
+git commit -m "style: redesign website with Autodesk-inspired clean aesthetic and update installer exe"
 git branch -M main
 
 echo.
