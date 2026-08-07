@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_v1.0.0_Setup.exe`;
+const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
 
 interface FeatureRow {
   name: string;
@@ -90,7 +90,7 @@ export function PricingMatrix() {
                 <td className="p-5 text-center">
                   <a
                     href={INSTALLER_DOWNLOAD_URL}
-                    download="VerixaBimSuite_v1.0.0_Setup.exe"
+                    download="VerixaBimSuite_Setup_v1.0.0.exe"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-medium text-xs md:text-sm transition-colors"
                   >
                     <Download size={15} />

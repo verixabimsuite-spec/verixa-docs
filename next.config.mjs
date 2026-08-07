@@ -9,17 +9,23 @@ if (isGithubActions) {
 }
 
 // Copy installer .exe if present locally
-const installerSrc = 'C:\\Users\\AGS\\Documents\\PROJECT PLUGINS\\VERIXA\\VERIXA v1.4_20260725\\Output\\VerixaBimSuite_v1.0.0_Setup.exe';
+const outputDir = 'C:\\Users\\AGS\\Documents\\PROJECT PLUGINS\\VERIXA\\VERIXA v1.4_20260725\\Output';
 const downloadsDestDir = path.join(process.cwd(), 'public', 'downloads');
-const installerDest = path.join(downloadsDestDir, 'VerixaBimSuite_v1.0.0_Setup.exe');
 
 if (!fs.existsSync(downloadsDestDir)) {
   fs.mkdirSync(downloadsDestDir, { recursive: true });
 }
-if (fs.existsSync(installerSrc)) {
+if (fs.existsSync(outputDir)) {
   try {
-    fs.copyFileSync(installerSrc, installerDest);
-    console.log('Installer .exe copied to public/downloads successfully.');
+    const files = fs.readdirSync(outputDir);
+    const exeFiles = files.filter(f => f.toLowerCase().endsWith('.exe'));
+    for (const exe of exeFiles) {
+      const srcFile = path.join(outputDir, exe);
+      fs.copyFileSync(srcFile, path.join(downloadsDestDir, exe));
+      fs.copyFileSync(srcFile, path.join(downloadsDestDir, 'VerixaBimSuite_Setup_v1.0.0.exe'));
+      fs.copyFileSync(srcFile, path.join(downloadsDestDir, 'VerixaBimSuite_v1.0.0_Setup.exe'));
+      console.log(`Installer .exe (${exe}) copied to public/downloads successfully.`);
+    }
   } catch (err) {
     console.error('Failed to copy installer .exe:', err);
   }

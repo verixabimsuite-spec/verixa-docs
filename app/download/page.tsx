@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { BackButton } from '@/components/BackButton';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_v1.0.0_Setup.exe`;
+const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
 
 const previousVersions = [
   { version: '1.0.0', date: 'July 30, 2026', size: 'Installer (.exe)', notes: 'Initial Official Release v1.0.0' },
@@ -43,7 +43,7 @@ export default function DownloadPage() {
             
             <a 
               href={INSTALLER_DOWNLOAD_URL}
-              download="VerixaBimSuite_v1.0.0_Setup.exe"
+              download="VerixaBimSuite_Setup_v1.0.0.exe"
               className="w-full md:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold flex items-center justify-center gap-3 transition-colors shadow-lg shadow-blue-500/20"
             >
               <Download size={22} /> Download Installer (.exe)

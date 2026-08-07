@@ -8,7 +8,7 @@ import { PricingMatrix } from '@/components/PricingMatrix';
 
 export const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-export const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_v1.0.0_Setup.exe`;
+export const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
 
 export default function PricingPage() {
   const { t } = useLanguage();
@@ -112,7 +112,7 @@ function PricingCard({
         {checkoutUrl ? (
           <a
             href={checkoutUrl}
-            download={isDownload ? "VerixaBimSuite_v1.0.0_Setup.exe" : undefined}
+            download={isDownload ? "VerixaBimSuite_Setup_v1.0.0.exe" : undefined}
             target={isExternal ? "_blank" : "_self"}
             rel={isExternal ? "noopener noreferrer" : undefined}
             className={`w-full py-4 px-6 rounded-xl font-bold mb-8 text-center flex items-center justify-center gap-2 transition-all ${
