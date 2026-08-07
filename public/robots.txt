@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://verixabimsuite-spec.github.io/verixa-docs/sitemap.xml

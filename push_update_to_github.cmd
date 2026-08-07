@@ -33,7 +33,7 @@ git add .
 
 echo.
 echo [3/4] Menyimpan perubahan...
-git commit -m "style: redesign website with Autodesk-inspired clean aesthetic and update installer exe"
+git commit -m "feat: add Google Search Console verification file google75430e8fabc31da1.html and site verification metadata"
 git branch -M main
 
 echo.
