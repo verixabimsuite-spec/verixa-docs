@@ -6,7 +6,7 @@ import { BackButton } from '@/components/BackButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PricingMatrix } from '@/components/PricingMatrix';
 
-import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
+import { LEMON_SQUEEZY_CHECKOUT_URL, GUMROAD_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 export default function PricingPage() {
   const { t } = useLanguage();
@@ -53,8 +53,11 @@ export default function PricingPage() {
               isPopular={true}
               popularText={t('pricing.mostPopular')}
               description={t('pricing.perpetual.desc')}
-              cta={t('pricing.cta.buy')}
+              cta={t('pricing.cta.buy') + ' (Lemon Squeezy)'}
               checkoutUrl={LEMON_SQUEEZY_CHECKOUT_URL}
+              secondaryCta={t('pricing.cta.buy') + ' (Gumroad)'}
+              secondaryCheckoutUrl={GUMROAD_CHECKOUT_URL}
+              secondaryIcon={<ShoppingCart size={18} />}
               isExternal={true}
               icon={<ShoppingCart size={18} />}
               features={[
@@ -83,7 +86,10 @@ function PricingCard({
   isPopular = false, 
   cta, 
   popularText, 
-  checkoutUrl, 
+  checkoutUrl,
+  secondaryCheckoutUrl,
+  secondaryCta,
+  secondaryIcon,
   isExternal = false,
   isDownload = false,
   icon
@@ -108,21 +114,35 @@ function PricingCard({
         </div>
 
         {checkoutUrl ? (
-          <a
-            href={checkoutUrl}
-            download={isDownload ? "VerixaBimSuite_Setup_v1.0.0.exe" : undefined}
-            target={isExternal ? "_blank" : "_self"}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            className={`w-full py-4 px-6 rounded-xl font-bold mb-8 text-center flex items-center justify-center gap-2 transition-all ${
-              isPopular
-                ? 'bg-primary hover:bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98]'
-                : 'bg-gray-800 hover:bg-gray-700 text-white hover:scale-[1.02] active:scale-[0.98]'
-            }`}
-          >
-            {icon}
-            <span>{cta || "Get Started"}</span>
-            {isExternal && <ExternalLink size={14} className="opacity-70 ml-0.5" />}
-          </a>
+          <div className="flex flex-col gap-3 mb-8">
+            <a
+              href={checkoutUrl}
+              download={isDownload ? "VerixaBimSuite_Setup_v1.0.0.exe" : undefined}
+              target={isExternal ? "_blank" : "_self"}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              className={`w-full py-4 px-6 rounded-xl font-bold text-center flex items-center justify-center gap-2 transition-all ${
+                isPopular
+                  ? 'bg-primary hover:bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98]'
+                  : 'bg-gray-800 hover:bg-gray-700 text-white hover:scale-[1.02] active:scale-[0.98]'
+              }`}
+            >
+              {icon}
+              <span>{cta || "Get Started"}</span>
+              {isExternal && <ExternalLink size={14} className="opacity-70 ml-0.5" />}
+            </a>
+            {secondaryCheckoutUrl && (
+              <a
+                href={secondaryCheckoutUrl}
+                target={isExternal ? "_blank" : "_self"}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className={`w-full py-4 px-6 rounded-xl font-bold text-center flex items-center justify-center gap-2 transition-all bg-pink-600 hover:bg-pink-500 text-white shadow-lg shadow-pink-500/30 hover:scale-[1.02] active:scale-[0.98]`}
+              >
+                {secondaryIcon}
+                <span>{secondaryCta || "Get Started"}</span>
+                {isExternal && <ExternalLink size={14} className="opacity-70 ml-0.5" />}
+              </a>
+            )}
+          </div>
         ) : (
           <button className="w-full py-4 px-6 rounded-xl font-bold mb-8 bg-gray-800 text-white hover:bg-gray-700 transition-colors">
             {cta || "Get Started"}

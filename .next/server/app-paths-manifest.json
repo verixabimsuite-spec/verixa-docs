@@ -22,6 +22,6 @@
   "/support/page": "app/support/page.js",
   "/terms-of-service/page": "app/terms-of-service/page.js",
   "/docs/page": "app/docs/page.js",
-  "/docs/getting-started/page": "app/docs/getting-started/page.js",
-  "/docs/[slug]/page": "app/docs/[slug]/page.js"
+  "/docs/[slug]/page": "app/docs/[slug]/page.js",
+  "/docs/getting-started/page": "app/docs/getting-started/page.js"
 }

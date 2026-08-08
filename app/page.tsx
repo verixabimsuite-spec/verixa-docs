@@ -9,7 +9,7 @@ import { FaqAccordion } from '@/components/FaqAccordion';
 import { PricingMatrix } from '@/components/PricingMatrix';
 import { HeroProductTeaser } from '@/components/HeroProductTeaser';
 
-import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
+import { LEMON_SQUEEZY_CHECKOUT_URL, GUMROAD_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -44,15 +44,26 @@ export default function HomePage() {
               <span>Download 7-Day Free Trial (.exe)</span>
             </a>
 
-            <a 
-              href={LEMON_SQUEEZY_CHECKOUT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2.5 transition-colors border border-gray-700"
-            >
-              <ShoppingCart size={18} className="text-emerald-400" />
-              <span>Buy Commercial License ($79)</span>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <a 
+                href={LEMON_SQUEEZY_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2.5 transition-colors border border-gray-700"
+              >
+                <ShoppingCart size={18} className="text-emerald-400" />
+                <span>Buy (Lemon Squeezy)</span>
+              </a>
+              <a 
+                href={GUMROAD_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2.5 transition-colors border border-gray-700"
+              >
+                <ShoppingCart size={18} className="text-pink-400" />
+                <span>Buy (Gumroad)</span>
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-6 pt-3 text-xs text-gray-400 font-medium">
@@ -306,15 +317,26 @@ export default function HomePage() {
               <Download size={18} />
               <span>Download Free Trial (.exe)</span>
             </a>
-            <a
-              href={LEMON_SQUEEZY_CHECKOUT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-gray-700"
-            >
-              <ShoppingCart size={18} className="text-emerald-400" />
-              <span>Buy Commercial License ($79)</span>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <a
+                href={LEMON_SQUEEZY_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-gray-700"
+              >
+                <ShoppingCart size={18} className="text-emerald-400" />
+                <span>Buy (Lemon Squeezy)</span>
+              </a>
+              <a
+                href={GUMROAD_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3.5 rounded bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-gray-700"
+              >
+                <ShoppingCart size={18} className="text-pink-400" />
+                <span>Buy (Gumroad)</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

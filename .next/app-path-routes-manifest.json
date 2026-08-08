@@ -22,6 +22,6 @@
   "/support/page": "/support",
   "/terms-of-service/page": "/terms-of-service",
   "/docs/page": "/docs",
-  "/docs/getting-started/page": "/docs/getting-started",
-  "/docs/[slug]/page": "/docs/[slug]"
+  "/docs/[slug]/page": "/docs/[slug]",
+  "/docs/getting-started/page": "/docs/getting-started"
 }

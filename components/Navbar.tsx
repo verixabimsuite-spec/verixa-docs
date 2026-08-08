@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import verixaLogo from '@/public/verixa-logo.jpg';
 
-import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
+import { LEMON_SQUEEZY_CHECKOUT_URL, GUMROAD_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -133,16 +133,27 @@ export function Navbar() {
               <span>Free Trial</span>
             </a>
 
-            {/* Buy License Button */}
-            <a
-              href={LEMON_SQUEEZY_CHECKOUT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-1.5 rounded bg-[#006699] hover:bg-[#005580] text-white font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
-            >
-              <ShoppingCart size={13} />
-              <span>Buy License ($79)</span>
-            </a>
+            {/* Buy License Buttons */}
+            <div className="flex items-center gap-2">
+              <a
+                href={LEMON_SQUEEZY_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-1.5 rounded bg-[#006699] hover:bg-[#005580] text-white font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
+              >
+                <ShoppingCart size={13} />
+                <span>Lemon Squeezy</span>
+              </a>
+              <a
+                href={GUMROAD_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-1.5 rounded bg-pink-600 hover:bg-pink-500 text-white font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
+              >
+                <ShoppingCart size={13} />
+                <span>Gumroad</span>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Hamburger Toggle */}
@@ -193,15 +204,26 @@ export function Navbar() {
                 <Download size={14} className="text-blue-400" />
                 <span>Download Free Trial (.exe)</span>
               </a>
-              <a
-                href={LEMON_SQUEEZY_CHECKOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 rounded bg-[#006699] text-white font-bold text-xs flex items-center justify-center gap-2"
-              >
-                <ShoppingCart size={14} />
-                <span>Buy Commercial License ($79)</span>
-              </a>
+              <div className="grid grid-cols-2 gap-2 w-full">
+                <a
+                  href={LEMON_SQUEEZY_CHECKOUT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 rounded bg-[#006699] text-white font-bold text-xs flex items-center justify-center gap-2"
+                >
+                  <ShoppingCart size={14} />
+                  <span>Lemon Squeezy</span>
+                </a>
+                <a
+                  href={GUMROAD_CHECKOUT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 rounded bg-pink-600 text-white font-bold text-xs flex items-center justify-center gap-2"
+                >
+                  <ShoppingCart size={14} />
+                  <span>Gumroad</span>
+                </a>
+              </div>
             </div>
           </div>
         )}

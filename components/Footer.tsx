@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, Youtube } from 'lucide-react';
 import verixaLogo from '@/public/verixa-logo.jpg';
-import { LEMON_SQUEEZY_CHECKOUT_URL } from '@/lib/constants';
+import { LEMON_SQUEEZY_CHECKOUT_URL, GUMROAD_CHECKOUT_URL } from '@/lib/constants';
 
 export function Footer() {
   return (
@@ -51,6 +51,16 @@ export function Footer() {
                 className="text-blue-400 hover:text-blue-300 font-semibold transition-colors flex items-center gap-1"
               >
                 Buy License (Lemon Squeezy)
+              </a>
+            </li>
+            <li>
+              <a 
+                href={GUMROAD_CHECKOUT_URL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-pink-400 hover:text-pink-300 font-semibold transition-colors flex items-center gap-1"
+              >
+                Buy License (Gumroad)
               </a>
             </li>
             <li>

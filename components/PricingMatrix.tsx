@@ -4,7 +4,7 @@ import { Check, X, Sparkles, ShoppingCart, Download, ExternalLink } from 'lucide
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
 
-import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
+import { LEMON_SQUEEZY_CHECKOUT_URL, GUMROAD_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 interface FeatureRow {
   name: string;
@@ -96,16 +96,28 @@ export function PricingMatrix() {
                   </a>
                 </td>
                 <td className="p-5 text-center bg-primary/10 border-x border-primary/20">
-                  <a
-                    href={LEMON_SQUEEZY_CHECKOUT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-xs md:text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-105"
-                  >
-                    <ShoppingCart size={15} />
-                    <span>Buy License ($79)</span>
-                    <ExternalLink size={12} className="opacity-70" />
-                  </a>
+                  <div className="flex flex-col gap-2 items-center justify-center">
+                    <a
+                      href={LEMON_SQUEEZY_CHECKOUT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 w-full max-w-[220px] rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-xs md:text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-105"
+                    >
+                      <ShoppingCart size={15} />
+                      <span>Buy via Lemon Squeezy</span>
+                      <ExternalLink size={12} className="opacity-70" />
+                    </a>
+                    <a
+                      href={GUMROAD_CHECKOUT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 w-full max-w-[220px] rounded-lg bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs md:text-sm shadow-md shadow-pink-500/20 transition-all hover:scale-105"
+                    >
+                      <ShoppingCart size={15} />
+                      <span>Buy via Gumroad</span>
+                      <ExternalLink size={12} className="opacity-70" />
+                    </a>
+                  </div>
                 </td>
               </tr>
             </tfoot>
