@@ -29,7 +29,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/eula": {
+    "/download": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -42,8 +42,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/eula",
-      "dataRoute": "/eula.rsc",
+      "srcRoute": "/download",
+      "dataRoute": "/download.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -53,7 +53,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/features/batch-sheet-maker": {
+    "/contact": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -66,8 +66,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/features/batch-sheet-maker",
-      "dataRoute": "/features/batch-sheet-maker.rsc",
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -77,7 +77,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/features/family-manager": {
+    "/about": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -90,8 +90,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/features/family-manager",
-      "dataRoute": "/features/family-manager.rsc",
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -101,7 +101,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/future-releases": {
+    "/admin": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -114,56 +114,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/future-releases",
-      "dataRoute": "/future-releases.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/privacy-policy": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/privacy-policy",
-      "dataRoute": "/privacy-policy.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/faq": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/faq",
-      "dataRoute": "/faq.rsc",
+      "srcRoute": "/admin",
+      "dataRoute": "/admin.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -197,7 +149,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/features/smart-tag": {
+    "/features/family-manager": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -210,8 +162,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/features/smart-tag",
-      "dataRoute": "/features/smart-tag.rsc",
+      "srcRoute": "/features/family-manager",
+      "dataRoute": "/features/family-manager.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -245,6 +197,78 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/future-releases": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/future-releases",
+      "dataRoute": "/future-releases.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/faq": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/faq",
+      "dataRoute": "/faq.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/features": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/features",
+      "dataRoute": "/features.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/terms-of-service": {
       "experimentalBypassFor": [
         {
@@ -260,30 +284,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/terms-of-service",
       "dataRoute": "/terms-of-service.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/release-notes": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/release-notes",
-      "dataRoute": "/release-notes.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -317,7 +317,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/docs/getting-started": {
+    "/release-notes": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -330,8 +330,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/docs/getting-started",
-      "dataRoute": "/docs/getting-started.rsc",
+      "srcRoute": "/release-notes",
+      "dataRoute": "/release-notes.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/features/smart-tag": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/features/smart-tag",
+      "dataRoute": "/features/smart-tag.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/features/batch-sheet-maker": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/features/batch-sheet-maker",
+      "dataRoute": "/features/batch-sheet-maker.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -653,7 +701,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/contact": {
+    "/eula": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -666,8 +714,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
+      "srcRoute": "/eula",
+      "dataRoute": "/eula.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -701,7 +749,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/download": {
+    "/privacy-policy": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -714,8 +762,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/download",
-      "dataRoute": "/download.rsc",
+      "srcRoute": "/privacy-policy",
+      "dataRoute": "/privacy-policy.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -725,7 +773,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/docs/getting-started": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -738,56 +786,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/features": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/features",
-      "dataRoute": "/features.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/admin": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/admin",
-      "dataRoute": "/admin.rsc",
+      "srcRoute": "/docs/getting-started",
+      "dataRoute": "/docs/getting-started.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -827,8 +827,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "f69210c4682a09f80c3ae307bc584734",
-    "previewModeSigningKey": "f68f8735c2e6b3c946470c4b614b128b943dabc438bd26a95cf24f0e67634e0e",
-    "previewModeEncryptionKey": "6f2383d6ce5fd561258a479faef3d733f768a771ba7f660bbf1e8828b8cdb915"
+    "previewModeId": "16203030c7e2db927bb66f09fc5a6a53",
+    "previewModeSigningKey": "7c62b141ba8dbce78e53946e4c6367072db71ee7ccc136d36c52483126583fb7",
+    "previewModeEncryptionKey": "c9c21f2af87997a7b81e418793bf8da0816ef8ad5ff264b40eb4658eb5099a8a"
   }
 }

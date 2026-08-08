@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Instagram, Youtube } from 'lucide-react';
 import verixaLogo from '@/public/verixa-logo.jpg';
 import { LEMON_SQUEEZY_CHECKOUT_URL } from '@/lib/constants';
 
