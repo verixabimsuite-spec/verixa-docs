@@ -9,9 +9,7 @@ import { FaqAccordion } from '@/components/FaqAccordion';
 import { PricingMatrix } from '@/components/PricingMatrix';
 import { HeroProductTeaser } from '@/components/HeroProductTeaser';
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
-const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
+import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 export default function HomePage() {
   const { t } = useLanguage();

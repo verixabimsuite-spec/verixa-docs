@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Youtube } from 'lucide-react';
 import verixaLogo from '@/public/verixa-logo.jpg';
+import { LEMON_SQUEEZY_CHECKOUT_URL } from '@/lib/constants';
 
 export function Footer() {
   return (
@@ -44,7 +44,7 @@ export function Footer() {
             </li>
             <li>
               <a 
-                href="https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig" 
+                href={LEMON_SQUEEZY_CHECKOUT_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-blue-400 hover:text-blue-300 font-semibold transition-colors flex items-center gap-1"

@@ -6,9 +6,7 @@ import { BackButton } from '@/components/BackButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PricingMatrix } from '@/components/PricingMatrix';
 
-export const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-export const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
+import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 export default function PricingPage() {
   const { t } = useLanguage();

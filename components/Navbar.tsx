@@ -8,9 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import verixaLogo from '@/public/verixa-logo.jpg';
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
-const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
+import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 export function Navbar() {
   const { t } = useLanguage();

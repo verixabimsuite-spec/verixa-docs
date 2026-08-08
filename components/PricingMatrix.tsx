@@ -4,9 +4,7 @@ import { Check, X, Sparkles, ShoppingCart, Download, ExternalLink } from 'lucide
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
 
-const LEMON_SQUEEZY_CHECKOUT_URL = "https://verixa-tool.lemonsqueezy.com/checkout?utm_content=link_in_bio&utm_medium=social&utm_source=ig";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const INSTALLER_DOWNLOAD_URL = `${basePath}/downloads/VerixaBimSuite_Setup_v1.0.0.exe`;
+import { LEMON_SQUEEZY_CHECKOUT_URL, INSTALLER_DOWNLOAD_URL } from '@/lib/constants';
 
 interface FeatureRow {
   name: string;
